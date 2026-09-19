@@ -15,7 +15,7 @@ For a project that has not adopted, add `--bootstrap`; that reads guidance and a
 
 Use the real project root even when the session's checkout differs from the package location. Read only the files the resolver lists under `files`, then the project's own bindings in `docs/OPERATING.md` when that file exists (in bootstrap mode it usually does not yet). A `ready` result names the exact process; apply it within the scope the user authorized. An `error` result is reported with its `required_identity`; never substitute another release or assume adoption.
 
-When the user wants the project documents created, scaffold from `${CLAUDE_PLUGIN_ROOT}/templates/project/` and read `${CLAUDE_PLUGIN_ROOT}/docs/resolver-contract.md` for the exact adoption block; do not invent the schema.
+When the user wants the project documents created, scaffold from `${CLAUDE_PLUGIN_ROOT}/templates/project/` and read `${CLAUDE_PLUGIN_ROOT}/docs/resolver-contract.md` for the exact adoption block and for where each value comes from; do not invent the schema or the `source_commit`.
 
 If `python3` is unavailable, read the adoption block in `docs/OPERATING.md`, take its `release`, and read `playbooks/<release>/core.md` and `playbooks/<release>/stages/start.md` from the package root, stating that payload hashes were not verified. Without an adoption block, the bootstrap release is the `bootstrap` value in `playbooks/manifest.json`.
 

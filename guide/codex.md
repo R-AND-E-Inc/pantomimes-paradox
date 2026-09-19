@@ -38,7 +38,7 @@ Alternative without a marketplace: Codex's built-in skill installer can fetch in
 ## Differences from Claude Code
 
 - Commands are `$work-plan`, `$paradox-setup`, and so on, with no plugin prefix.
-- The skill files mention `${CLAUDE_PLUGIN_ROOT}`; on Codex the package root is two directories above each `SKILL.md`, and the skills say so.
+- The skill files mention `${CLAUDE_PLUGIN_ROOT}` and `${CLAUDE_PROJECT_DIR}`; on Codex the package root is two directories above each `SKILL.md`, and the project root is the folder the session runs in (pass it explicitly as `--project-root` if the session is elsewhere).
 - Codex has no subagent definitions, so independent review runs as a separate task or session that receives only the neutral brief; the `agents/` folder is ignored.
 - The session-start hook that reminds the assistant of the handoff rule is Claude-only. On Codex, add the rule to your global `AGENTS.md` if you want it outside the skills: "End every reply with where the work stands and the single next action."
 

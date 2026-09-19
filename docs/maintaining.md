@@ -17,7 +17,7 @@ python3 scripts/build_manifests.py --release 2.1.0
 python3 scripts/build_manifests.py --check
 ```
 
-Then set `BOOTSTRAP` in `scripts/resolve_workflow.py` to the new release (new and adopting projects get it), add a short note under `provenance/` describing what changed and why, bump `version` in both plugin manifests, run the checks below, commit and tag `v<plugin version>`.
+Then set `BOOTSTRAP` in `scripts/resolve_workflow.py` to the new release and change the `bootstrap` value in `playbooks/manifest.json` to match (the builder never rewrites that field on an existing catalog; `--check` fails `unsupported_bootstrap` until both agree), add a short note under `provenance/` describing what changed and why, bump `version` in both plugin manifests, run the checks below, commit and tag `v<plugin version>`.
 
 ## Cutting a plugin release without a process change
 
@@ -33,7 +33,7 @@ node --test templates/project/.github/scripts/select-ci.test.mjs
 claude plugin validate .
 ```
 
-`verify.yml` runs the first four on every push. `check_package.py` also refuses stray files, oversized files, and project-specific words leaking into shared text.
+`verify.yml` runs the first four on every push. `claude plugin validate` checks the manifests, not the skills' behaviour. `check_package.py` also refuses stray files, oversized files, and project-specific words leaking into shared text.
 
 ## Adoption block reference
 

@@ -51,7 +51,7 @@ Read [guide/guided.md](guide/guided.md) for the long version or [guide/expert.md
 - **The process is versioned and pinned per project.** Each project records the exact release it follows in its `docs/OPERATING.md`. Updating the plugin never silently changes a project's rules; a project migrates when it chooses to. Old releases stay byte-identical, with hashes checked on every use.
 - **The method lives in `playbooks/`**, one shared core plus one file per stage. **Discovery, planning, risk and release references live in `library/`** and load only when their stage opens. **Project scaffolds live in `templates/`.**
 - **Every reply ends with a handoff:** where things stand and the single next action you can take now.
-- **Independent review is mechanical, not a promise:** a fresh-context reviewer with no write tools, given the candidate and the requirements but not the author's verdict.
+- **Independent review is mechanical, not a promise:** a fresh-context reviewer with no editing tools and instructions to change nothing, given the candidate and the requirements but not the author's verdict.
 
 ## Lineage and licence
 

@@ -125,4 +125,6 @@ You decide what the product should do, resolve the tradeoffs that matter, judge 
 /plugin update pantomimes-paradox
 ```
 
+Then restart Claude Code; an update applies to new sessions.
+
 Updating the plugin never changes an existing project's process. A project keeps the release it pinned until you ask it to migrate, which is an ordinary reviewed change.
