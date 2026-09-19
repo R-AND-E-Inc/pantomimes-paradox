@@ -1,0 +1,4 @@
+interface:
+  display_name: "Start"
+  short_description: "Turn a new idea into a first slice"
+  default_prompt: "$work-start a new project from this idea."

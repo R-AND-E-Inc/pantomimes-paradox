@@ -1,0 +1,22 @@
+{
+  "bootstrap": "2.0.0",
+  "plugin": "pantomimes-paradox",
+  "releases": {
+    "1.0.0": {
+      "manifest_sha256": "cfb40d4d31f1e633d9a7b5a03b59225806183983444145479aceb0e60529aef8"
+    },
+    "1.1.0": {
+      "manifest_sha256": "896db76c15bd1faf3ce44fb6f1dbe4a15c0311efc8175623721201b191d4d9c1"
+    },
+    "1.2.0": {
+      "manifest_sha256": "022d49db243dc18a07bf275bd48c647d8ebf5927063ecd7a024f7462dd6d81e0"
+    },
+    "2.0.0": {
+      "manifest_sha256": "fdf92e3539ba42a56fb786b37f749231dc2921861dda58936ad93844525b9f8f"
+    },
+    "legacy-personal-workflows": {
+      "manifest_sha256": "7a285cb257317a1c1efbe00113c6b20754dd17868d5dfbf79461e0675a5d86fa"
+    }
+  },
+  "schema": 1
+}

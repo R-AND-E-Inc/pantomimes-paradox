@@ -1,0 +1,60 @@
+{
+  "files": {
+    "core.md": "044d7f72a69e4a629c7dafa4fe23e70c404d75178072fa5376b6160080a3972f",
+    "stages/adopt.md": "0cafbc234f0aa4e9d4a25609d99db90dc78f0adf69418810c9a8376eb4b45c59",
+    "stages/closeout.md": "20e0a91b1e40e3742e9cad87c9470c9ff1d32d19ee9cb8d700c92424d8a1f3b9",
+    "stages/deliver.md": "aec1db33ddc6979e361e7c3caac18a23e188463f37395981ea709f4519c2483f",
+    "stages/evidence.md": "8952fb52c4d24ce1222f2e89251252c77097f70a2ba6e3fda3df232216d4c8bb",
+    "stages/flow-check.md": "94541334be1ddbde543100a008b3d9fba1652e5492fe16ce4d772334acc77e32",
+    "stages/plan.md": "62eb8fcdc9d75fa6472cfcc448525a351590b77809a9db53495a1f760f2b7b63",
+    "stages/resume.md": "ec2e735f85cd0356664059fd64572bb64daa0a306451ad33e46f10dcb0426a8f",
+    "stages/review.md": "99bd81d69ea4006816a5870887067377b4c669254c0b90ac3c5c4b89e3e52ff0",
+    "stages/start.md": "d46a1c2f06d033f4859fe60d8e542118d00174ed4fa0a9135bdd8afc41bfe37b",
+    "stages/steps.md": "fa9234fd729982a35e454ccca3e7595461a168a43c32dbff3c34bf5c8dcbc78d"
+  },
+  "plugin": "personal-workflows",
+  "release": "1.0.0",
+  "schema": 1,
+  "skills": {
+    "work-adopt": [
+      "core.md",
+      "stages/adopt.md"
+    ],
+    "work-closeout": [
+      "core.md",
+      "stages/closeout.md"
+    ],
+    "work-deliver": [
+      "core.md",
+      "stages/deliver.md"
+    ],
+    "work-evidence": [
+      "core.md",
+      "stages/evidence.md"
+    ],
+    "work-flow-check": [
+      "core.md",
+      "stages/flow-check.md"
+    ],
+    "work-plan": [
+      "core.md",
+      "stages/plan.md"
+    ],
+    "work-resume": [
+      "core.md",
+      "stages/resume.md"
+    ],
+    "work-review": [
+      "core.md",
+      "stages/review.md"
+    ],
+    "work-start": [
+      "core.md",
+      "stages/start.md"
+    ],
+    "work-steps": [
+      "core.md",
+      "stages/steps.md"
+    ]
+  }
+}

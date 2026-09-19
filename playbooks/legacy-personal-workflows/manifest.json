@@ -1,0 +1,44 @@
+{
+  "files": {
+    "skills/work-closeout/SKILL.md": "7765a7705815e5fa3269feb9c3ddc33a8efccf7b71473ebdf67cbf48e05609fd",
+    "skills/work-closeout/agents/openai.yaml": "202c57961f33cc0bb2b25497063ff45e44654f9d3e454717e6be21baaaec63af",
+    "skills/work-evidence/SKILL.md": "ae820c9e652161e8e2b9e8cbc05eec71d5a19d2d86bbfeb8df713321274e4c27",
+    "skills/work-evidence/agents/openai.yaml": "1c03da121c96cf1465066b5bf4ae2581ccb7206b414ae817d2c11c4495fc8c0f",
+    "skills/work-flow-check/SKILL.md": "71d1b27894f9a03041861c14161bc36bbc156f7feac4192beaa7addab1aa7e40",
+    "skills/work-flow-check/agents/openai.yaml": "8a47de2c957ab5ddf11e8d3e9380eeada9a847a9dec214ea00a51f20fa36b30c",
+    "skills/work-plan/SKILL.md": "d3ac06c489c6fcac80c82e6815df942ade9af4e4a67e28abc9d617abd0519434",
+    "skills/work-plan/agents/openai.yaml": "a9184dfb558fc7eb9ef01898a67f272f68eaa6d1833c492ac709c924bac9a568",
+    "skills/work-resume/SKILL.md": "6d5389f7165ecede80b2a11d1ddf89609f55d190eaf31e199c1c59f48b01b799",
+    "skills/work-resume/agents/openai.yaml": "2d4c5e9162ed0f1b1be8659013af8467fb57bb222b517a0dde326658b6f4c7b2",
+    "skills/work-review/SKILL.md": "655510fb3ef8644bf7370ba92ad5678e6ee870a3ceaf3422e3d7264f7ec0a834",
+    "skills/work-review/agents/openai.yaml": "d7e45eae98e4e29979b8220a023d0ceea38e4ef72cf8e20b05d0940326769f22",
+    "skills/work-steps/SKILL.md": "7486ec3bc1ab79de1c13ee60371de833c9d42474094839cdcd4c556a425ba871",
+    "skills/work-steps/agents/openai.yaml": "d6b02db81b457e0823cb2d7dde29411d60fa557085189e3ee658fc0e7e4e82f6"
+  },
+  "plugin": "personal-workflows",
+  "release": "legacy-personal-workflows",
+  "schema": 1,
+  "skills": {
+    "work-closeout": [
+      "skills/work-closeout/SKILL.md"
+    ],
+    "work-evidence": [
+      "skills/work-evidence/SKILL.md"
+    ],
+    "work-flow-check": [
+      "skills/work-flow-check/SKILL.md"
+    ],
+    "work-plan": [
+      "skills/work-plan/SKILL.md"
+    ],
+    "work-resume": [
+      "skills/work-resume/SKILL.md"
+    ],
+    "work-review": [
+      "skills/work-review/SKILL.md"
+    ],
+    "work-steps": [
+      "skills/work-steps/SKILL.md"
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "pantomimes-paradox",
+  "displayName": "The Pantomime's Paradox",
+  "version": "1.0.0",
+  "description": "One reusable, versioned workflow for building software with an AI coding assistant: discovery, planning, delivery, independent review, evidence and closeout, with every response ending in the next step.",
+  "author": {
+    "name": "R-AND-E-Inc"
+  },
+  "homepage": "https://github.com/R-AND-E-Inc/pantomimes-paradox",
+  "repository": "https://github.com/R-AND-E-Inc/pantomimes-paradox",
+  "license": "MIT",
+  "keywords": ["workflow", "planning", "review", "evidence", "delivery", "methodology"]
+}

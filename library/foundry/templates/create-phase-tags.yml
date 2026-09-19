@@ -1,0 +1,83 @@
+name: Create phase tags
+
+# Standing mechanism for phase-close tags. Sandboxed coding agents usually cannot push tag refs
+# (git proxies return 403), so tags are created here from a committed table or single inputs.
+# Trigger from the Actions tab, or let the assistant trigger it through the GitHub connector.
+#
+# Run from the Actions tab:
+#   - leave inputs blank to process every row in docs/history/phase-tags.tsv (idempotent)
+#   - or fill tag + sha (+ message) to create one tag, e.g. after a phase merges
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Single tag to create (e.g. phase-05c-closed). Blank = process phase-tags.tsv"
+        required: false
+        type: string
+      sha:
+        description: "Full commit SHA for the single tag"
+        required: false
+        type: string
+      message:
+        description: "Annotation for the single tag"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  tags:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4   # pin to the repo's usual SHA convention
+        with:
+          fetch-depth: 0
+
+      - name: Create tags
+        env:
+          IN_TAG: ${{ inputs.tag }}
+          IN_SHA: ${{ inputs.sha }}
+          IN_MSG: ${{ inputs.message }}
+        run: |
+          set -euo pipefail
+          git fetch --tags origin
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          created=0; skipped=0
+
+          create() {
+            local tag="$1" sha="$2" msg="$3"
+            if ! git cat-file -e "${sha}^{commit}" 2>/dev/null; then
+              echo "::error::${tag}: commit ${sha} not found in history"; exit 1
+            fi
+            if git rev-parse -q --verify "refs/tags/${tag}" >/dev/null 2>&1; then
+              local target; target=$(git rev-parse "${tag}^{commit}")
+              if [ "$target" = "$sha" ]; then
+                echo "skip   ${tag} already at ${sha}"; skipped=$((skipped+1)); return
+              fi
+              echo "::error::${tag} exists on a different commit (${target}); refusing to move it"; exit 1
+            fi
+            git tag -a "$tag" "$sha" -m "$msg"
+            git push origin "refs/tags/${tag}"
+            echo "create ${tag} -> ${sha}"; created=$((created+1))
+          }
+
+          if [ -n "$IN_TAG" ]; then
+            [ -n "$IN_SHA" ] || { echo "::error::sha is required with tag"; exit 1; }
+            create "$IN_TAG" "$IN_SHA" "${IN_MSG:-$IN_TAG}"
+          else
+            [ -f docs/history/phase-tags.tsv ] || { echo "::error::docs/history/phase-tags.tsv missing"; exit 1; }
+            while IFS=$'\t' read -r tag sha msg; do
+              [ -z "${tag:-}" ] && continue
+              case "$tag" in \#*) continue ;; esac
+              create "$tag" "$sha" "${msg:-$tag}"
+            done < docs/history/phase-tags.tsv
+          fi
+
+          echo "== ${created} created, ${skipped} already present =="
+          echo "== tags on remote =="
+          git ls-remote --tags origin | grep -v '\^{}' || true
+          echo "CREATE_PHASE_TAGS_OK"

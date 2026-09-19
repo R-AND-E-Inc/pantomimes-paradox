@@ -1,0 +1,4 @@
+interface:
+  display_name: "Steps"
+  short_description: "Get copyable prompts for your next slice"
+  default_prompt: "$work-steps for the next slice. Give me copyable prompts; do not execute them."

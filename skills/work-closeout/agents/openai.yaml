@@ -1,0 +1,4 @@
+interface:
+  display_name: "Closeout"
+  short_description: "Close a milestone and preserve useful context"
+  default_prompt: "$work-closeout this milestone and record the exact next action."

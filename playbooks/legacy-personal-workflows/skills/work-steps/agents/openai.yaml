@@ -1,0 +1,4 @@
+interface:
+  display_name: "Generate workflow steps"
+  short_description: "Get copyable prompts for the next slice or phase."
+  default_prompt: "Use $work-steps for the next slice. Check the current project and give me the ordered prompts to follow, without executing them."

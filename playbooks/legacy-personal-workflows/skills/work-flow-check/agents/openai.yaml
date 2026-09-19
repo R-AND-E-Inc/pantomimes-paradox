@@ -1,0 +1,4 @@
+interface:
+  display_name: "Check a user flow"
+  short_description: "Trace an interaction through its actual user outcome."
+  default_prompt: "Use $work-flow-check for the current task, following this project\u2019s requirements and the user\u2019s existing authorization."

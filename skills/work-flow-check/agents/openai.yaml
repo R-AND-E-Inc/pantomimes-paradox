@@ -1,0 +1,4 @@
+interface:
+  display_name: "Flow Check"
+  short_description: "Trace an interaction through its full result"
+  default_prompt: "$work-flow-check the affected user journey and failure states."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Deliver"
+  short_description: "Coordinate an authorized slice through delivery"
+  default_prompt: "$work-deliver the approved slice using this project's workflow."

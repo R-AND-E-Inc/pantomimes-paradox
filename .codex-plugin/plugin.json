@@ -1,0 +1,18 @@
+{
+  "name": "pantomimes-paradox",
+  "version": "1.0.0",
+  "description": "One reusable, versioned workflow for building software with an AI coding assistant: discovery, planning, delivery, independent review, evidence and closeout, with every response ending in the next step.",
+  "author": {
+    "name": "R-AND-E-Inc"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "The Pantomime's Paradox",
+    "shortDescription": "One reusable workflow, shaped to each project.",
+    "longDescription": "Twelve skills with immutable, project-pinned process releases: start or adopt a project, get the next prompts, plan, resume, deliver, review, check evidence, trace a flow, close out.",
+    "developerName": "R-AND-E-Inc",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": "Set me up with The Pantomime's Paradox for this project."
+  }
+}

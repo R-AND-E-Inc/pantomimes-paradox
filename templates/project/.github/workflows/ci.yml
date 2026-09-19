@@ -1,0 +1,59 @@
+name: CI
+
+# Starter workflow: change-based selection, then the checks your project actually has.
+# Replace the placeholder steps under "verify" with your real commands from docs/OPERATING.md.
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  selection:
+    name: Select applicable checks
+    runs-on: ubuntu-latest
+    outputs:
+      full: ${{ steps.select.outputs.full }}
+      workflow: ${{ steps.select.outputs.workflow }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - id: select
+        run: node .github/scripts/select-ci.mjs
+
+  consistency:
+    name: Repository consistency
+    needs: selection
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Root instruction aliases are identical
+        run: cmp CLAUDE.md AGENTS.md
+      - name: Selector tests
+        run: node --test .github/scripts/select-ci.test.mjs
+
+  verify:
+    name: Verify
+    needs: selection
+    if: ${{ needs.selection.outputs.full == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # - run: <install>
+      # - run: <lint and typecheck>
+      # - run: <tests>
+      # - run: <build>
+      - run: echo "Replace these placeholders with the project's real checks from docs/OPERATING.md" && exit 1

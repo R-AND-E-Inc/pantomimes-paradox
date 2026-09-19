@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review"
+  short_description: "Review behavior, regressions, and evidence"
+  default_prompt: "$work-review the current change against its approved scope."

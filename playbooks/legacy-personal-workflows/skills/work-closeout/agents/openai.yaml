@@ -1,0 +1,4 @@
+interface:
+  display_name: "Close out and hand off"
+  short_description: "Preserve decisions, results, and a useful next step."
+  default_prompt: "Use $work-closeout for the current task, following this project\u2019s requirements and the user\u2019s existing authorization."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review a change"
+  short_description: "Find actionable defects against the accepted outcome."
+  default_prompt: "Use $work-review for the current task, following this project\u2019s requirements and the user\u2019s existing authorization."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Plan a change"
+  short_description: "Build an actionable plan from goals and project evidence."
+  default_prompt: "Use $work-plan for the current task, following this project\u2019s requirements and the user\u2019s existing authorization."

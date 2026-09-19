@@ -1,0 +1,4 @@
+interface:
+  display_name: "Setup"
+  short_description: "First-time setup and orientation"
+  default_prompt: "$paradox-setup for this project."

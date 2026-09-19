@@ -1,0 +1,4 @@
+interface:
+  display_name: "Evidence"
+  short_description: "Check what the completion evidence proves"
+  default_prompt: "$work-evidence for the current candidate and its acceptance criteria."

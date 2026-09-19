@@ -1,0 +1,4 @@
+interface:
+  display_name: "Plan"
+  short_description: "Plan a change using the actual project"
+  default_prompt: "$work-plan this change using the current project and acceptance criteria."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Mode"
+  short_description: "Switch guided or expert guidance"
+  default_prompt: "$paradox-mode expert"

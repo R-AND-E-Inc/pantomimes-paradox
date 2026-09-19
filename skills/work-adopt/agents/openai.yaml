@@ -1,0 +1,4 @@
+interface:
+  display_name: "Adopt"
+  short_description: "Prepare a safe migration for an existing project"
+  default_prompt: "$work-adopt this project. Inspect and propose its migration first."

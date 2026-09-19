@@ -1,0 +1,4 @@
+interface:
+  display_name: "Resume"
+  short_description: "Recover current state and the next valid action"
+  default_prompt: "$work-resume this project and identify the next valid action."

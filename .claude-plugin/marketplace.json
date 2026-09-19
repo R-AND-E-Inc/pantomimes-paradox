@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "pantomimes-paradox",
+  "description": "The Pantomime's Paradox: a versioned workflow plugin for AI-assisted software projects.",
+  "owner": {
+    "name": "R-AND-E-Inc"
+  },
+  "plugins": [
+    {
+      "name": "pantomimes-paradox",
+      "source": "./",
+      "description": "One reusable, versioned workflow for building software with an AI coding assistant: discovery, planning, delivery, independent review, evidence and closeout, with every response ending in the next step.",
+      "category": "productivity",
+      "keywords": ["workflow", "planning", "review", "evidence", "delivery"]
+    }
+  ]
+}

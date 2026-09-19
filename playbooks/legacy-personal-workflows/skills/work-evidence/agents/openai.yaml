@@ -1,0 +1,4 @@
+interface:
+  display_name: "Assemble verification evidence"
+  short_description: "Tie acceptance claims to current, inspectable evidence."
+  default_prompt: "Use $work-evidence for the current task, following this project\u2019s requirements and the user\u2019s existing authorization."
