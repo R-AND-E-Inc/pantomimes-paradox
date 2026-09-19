@@ -13,7 +13,7 @@ python3 "${CLAUDE_PLUGIN_ROOT}/scripts/resolve_workflow.py" --project-root "${CL
 
 For a project that has not adopted, add `--bootstrap`; that reads guidance and adopts nothing. For an adopted project run it without the flag.
 
-Use the real project root even when the session's checkout differs from the package location. Read only the files the resolver lists under `files`, then the project's own bindings in `docs/OPERATING.md`. A `ready` result names the exact process; apply it within the scope the user authorized. An `error` result is reported with its `required_identity`; never substitute another release or assume adoption.
+Use the real project root even when the session's checkout differs from the package location. Read only the files the resolver lists under `files`, then the project's own bindings in `docs/OPERATING.md` when that file exists (in bootstrap mode it usually does not yet). A `ready` result names the exact process; apply it within the scope the user authorized. An `error` result is reported with its `required_identity`; never substitute another release or assume adoption.
 
 When the user wants the project documents created, scaffold from `${CLAUDE_PLUGIN_ROOT}/templates/project/` and read `${CLAUDE_PLUGIN_ROOT}/docs/resolver-contract.md` for the exact adoption block; do not invent the schema.
 

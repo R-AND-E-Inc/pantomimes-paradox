@@ -4,9 +4,9 @@ Scaffolds that `work-start` and `work-adopt` copy into a project, proportionate 
 
 | Template | Use it when | Owner of |
 | --- | --- | --- |
-| `project/README-contract.md` | A small, low-consequence utility that fits in one or two sessions | The whole contract |
+| `project/README-contract.md` | A small, low-consequence utility that fits in one or two sessions | The whole contract (its `docs/OPERATING.md` then holds only the guidance mode, the adoption block and the commands) |
 | `project/CLAUDE.md` (copied byte-identical to `AGENTS.md`) | Any project with persistent data, several modules, or more than one session | Permanent constraints |
-| `project/docs/OPERATING.md` | Same | Workflow pin, guidance mode, project bindings |
+| `project/docs/OPERATING.md` | Every adopted project; the resolver reads nothing else | Workflow pin, guidance mode, project bindings |
 | `project/docs/PROJECT_STATE.md` | Same | Current work, authorization, next action |
 | `project/docs/PHASE_HISTORY.md` | Same | Closed units, decisions, waivers |
 | `project/.github/pull_request_template.md` | The project uses pull requests | The completion packet |

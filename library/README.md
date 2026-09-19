@@ -6,7 +6,7 @@ Reference material the process stages load on demand. Nothing here is a command 
 
 | File | Loaded by |
 | --- | --- |
-| `method.md` | Background reading; the stages carry what applies |
+| `method.md` | What the references mean by "the core": the synthesis loop, stage names F0–F11, the L1–L4 level table and the Unified/Split modes. Vocabulary for discovery, not additional gates; the stages carry what applies |
 | `references/discovery-interview.md` | `start`, when discovery opens |
 | `references/classification.md` | `start`, when the consequence level is unclear |
 | `references/ux-discovery.md` | `start`, when interaction design opens |

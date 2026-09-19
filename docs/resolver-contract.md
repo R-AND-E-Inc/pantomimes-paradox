@@ -9,19 +9,19 @@ The package name is `pantomimes-paradox`. Its former name, `personal-workflows`,
 `docs/OPERATING.md` is the only project workflow-selection authority. An adoption block consists of exactly these markers, with a raw JSON object between them (no Markdown code fence):
 
 ```text
-<!-- personal-workflows:begin -->
+<!-- pantomimes-paradox:begin -->
 {
   "schema": 1,
-  "plugin": "personal-workflows",
-  "release": "1.1.0",
+  "plugin": "pantomimes-paradox",
+  "release": "2.0.0",
   "source": "https://github.com/OWNER/REPOSITORY",
   "source_commit": "FULL_LOWERCASE_GIT_COMMIT",
   "manifest_sha256": "LOWERCASE_SHA256_OF_RELEASE_MANIFEST_BYTES"
 }
-<!-- personal-workflows:end -->
+<!-- pantomimes-paradox:end -->
 ```
 
-The sample identity values above must be replaced with the actual released identity before adoption. The resolver requires all six fields and rejects unknown fields, duplicate JSON keys, non-finite numbers, unknown schema versions, ranges, malformed identity values, credentials in the source URL, and incomplete or repeated marker blocks. The source must be an HTTPS repository URL; Git commits are full 40- or 64-character lowercase hex identities. Releases are exact semantic version strings.
+The sample identity values above must be replaced with the actual released identity before adoption. The resolver requires all six fields and rejects unknown fields, duplicate JSON keys, non-finite numbers, unknown schema versions, ranges, malformed identity values, credentials in the source URL, and incomplete or repeated marker blocks. The source must be an HTTPS repository URL (for this package, `https://github.com/R-AND-E-Inc/pantomimes-paradox`; a trailing `.git` is accepted and not required); Git commits are full 40- or 64-character lowercase hex identities. Releases are exact semantic version strings.
 
 One project selects one workflow release. Change that selection through an explicit migration at a suitable project transition boundary. Updating the global plugin never changes the selection. No adoption block means the project has not adopted the process. A block using the former `personal-workflows` markers is equivalent; a profile may contain only one block of either kind. An unreadable, malformed, or symlinked profile is an error rather than evidence of nonadoption.
 
