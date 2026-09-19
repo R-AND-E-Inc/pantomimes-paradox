@@ -1,14 +1,19 @@
 ---
 name: work-plan
-description: Plan a substantive change against the project's actual files, constraints and acceptance conditions. Preserves an approved plan unless material drift invalidates it.
-argument-hint: "[change to plan]"
+description: "Plan a substantive change against the project's actual files, constraints and acceptance conditions. Preserves an approved plan unless material drift invalidates it."
 allowed-tools: Bash(python3 ${CLAUDE_PLUGIN_ROOT}/scripts/resolve_workflow.py:*), Read, Glob, Grep
 ---
 
-Resolve the project's pinned process release before applying any process instruction. The package root is `${CLAUDE_PLUGIN_ROOT}` on Claude Code, or two directories above this file elsewhere:
+Resolve the project's pinned process release before applying any process instruction. On Claude Code:
 
 ```sh
 python3 "${CLAUDE_PLUGIN_ROOT}/scripts/resolve_workflow.py" --project-root "${CLAUDE_PROJECT_DIR}" --skill work-plan
+```
+
+On Codex or any other assistant, the package root is two directories above this `SKILL.md` and the project root is the working directory:
+
+```sh
+python3 "<package root>/scripts/resolve_workflow.py" --project-root "$PWD" --skill work-plan
 ```
 
 Use the real project root even when the session's checkout differs from the package location. Read only the files the resolver lists under `files`, then the project's own bindings in `docs/OPERATING.md`. A `ready` result names the exact process; apply it within the scope the user authorized. An `error` result is reported with its `required_identity`; never substitute another release or assume adoption.

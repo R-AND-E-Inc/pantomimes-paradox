@@ -1,51 +1,41 @@
 # Using it with Codex
 
-Codex support is second priority. The skills and process files are the same; the packaging differs, and it has had less testing than the Claude Code path. If something does not work, use Claude Code or tell the maintainer.
+The same package installs into Codex from GitHub. The skills, process files and templates are identical to the Claude Code ones; only the commands and the packaging differ.
 
 ## Install
 
-Codex loads plugins from a marketplace file. Clone this repository, then register it as a local marketplace and install the plugin:
+Codex reads plugins from marketplaces. This repository is one. On a machine with the Codex CLI (the Codex desktop app ships it; on macOS it is at `/Applications/ChatGPT.app/Contents/Resources/codex` if `codex` is not on your PATH):
 
 ```sh
-git clone https://github.com/R-AND-E-Inc/pantomimes-paradox.git ~/plugins/pantomimes-paradox
+codex plugin marketplace add R-AND-E-Inc/pantomimes-paradox
+codex plugin add pantomimes-paradox@pantomimes-paradox
 ```
 
-Create or edit `~/.agents/plugins/marketplace.json` so it contains an entry for this plugin (keep any entries already there):
-
-```json
-{
-  "name": "personal",
-  "interface": { "displayName": "Personal" },
-  "plugins": [
-    {
-      "name": "pantomimes-paradox",
-      "source": { "source": "local", "path": "../../plugins/pantomimes-paradox" },
-      "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
-      "category": "Productivity"
-    }
-  ]
-}
-```
-
-Then, in Codex:
+Start a new thread so Codex picks up the skills. Then, in the folder of a project:
 
 ```
-codex plugin add pantomimes-paradox@personal
+$paradox-setup
 ```
 
-Alternative without a marketplace: Codex's built-in skill installer can fetch individual skill folders from this repository, for example `skills/work-plan`. Skills installed that way still need the repository's `playbooks/` and `scripts/` next to them, so clone the whole repository rather than installing skills one at a time.
+The Codex app's plugin settings can also add a marketplace and install from it; the marketplace source is the same `R-AND-E-Inc/pantomimes-paradox`.
+
+Requirement: `python3` on the machine (macOS and Linux have it; on Windows install Python 3). Without it the skills still run, cannot verify the process files' hashes, and say so.
+
+## Commands
+
+Every command is `$<name>`: `$paradox-setup`, `$work-start`, `$work-adopt`, `$work-steps`, `$work-plan`, `$work-resume`, `$work-deliver`, `$work-review`, `$work-evidence`, `$work-flow-check`, `$work-closeout`, `$paradox-mode`. Plain language reaches the same skills. See [commands.md](commands.md).
 
 ## Differences from Claude Code
 
-- Commands are `$work-plan`, `$paradox-setup`, and so on, with no plugin prefix.
-- The skill files mention `${CLAUDE_PLUGIN_ROOT}` and `${CLAUDE_PROJECT_DIR}`; on Codex the package root is two directories above each `SKILL.md`, and the project root is the folder the session runs in (pass it explicitly as `--project-root` if the session is elsewhere).
-- Codex has no subagent definitions, so independent review runs as a separate task or session that receives only the neutral brief; the `agents/` folder is ignored.
-- The session-start hook that reminds the assistant of the handoff rule is Claude-only. On Codex, add the rule to your global `AGENTS.md` if you want it outside the skills: "End every reply with where the work stands and the single next action."
+- Independent review: Codex has no plugin-defined subagent, so `work-review` runs the fresh-context review as a separate task or Codex subagent that receives only the neutral brief; the package's `agents/` folder is ignored.
+- Session reminder: Claude Code gets a session-start hook that restates the handoff rule; Codex has no equivalent. Paste [templates/codex/AGENTS-global-snippet.md](../templates/codex/AGENTS-global-snippet.md) into `~/.codex/AGENTS.md` if you want the rule outside the skills too.
+- Package root: the skills give Codex its own command form (the package root is two directories above each `SKILL.md`; the project root is the working directory).
 
 ## Update
 
 ```sh
-git -C ~/plugins/pantomimes-paradox pull
+codex plugin marketplace upgrade
+codex plugin add pantomimes-paradox@pantomimes-paradox
 ```
 
-then reinstall the plugin so Codex reloads the files. An update never changes a project's pinned release.
+Then start a new thread. An update never changes a project's pinned release.

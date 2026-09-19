@@ -25,13 +25,25 @@ To try it for one session without installing: `claude --plugin-dir /path/to/pant
 
 Requirements: Claude Code, and `python3` on the machine (macOS and Linux have it; on Windows install Python 3 from python.org or the Microsoft Store). Without Python the skills still work, but they cannot verify the process files' hashes and will say so.
 
-Codex users: see [guide/codex.md](guide/codex.md). Codex support is second priority and less tested.
+## Install (Codex)
+
+```sh
+codex plugin marketplace add R-AND-E-Inc/pantomimes-paradox
+codex plugin add pantomimes-paradox@pantomimes-paradox
+```
+
+New thread, then `$paradox-setup`. Details and differences: [guide/codex.md](guide/codex.md).
+
+## Chat only (ChatGPT or claude.ai)
+
+Each release carries one zip per skill for chat surfaces that cannot run the resolver: [guide/chatgpt.md](guide/chatgpt.md).
 
 ## What you get
 
 | Command | What it does |
 | --- | --- |
 | `paradox-setup` | First-time check, choose guided or expert, route to a new or existing project |
+<!-- On Codex every command is $name instead of /pantomimes-paradox:name -->
 | `work-start` | Turn an idea into a product understanding, a plan and a first slice |
 | `work-adopt` | Bring an existing codebase under the workflow without restarting it |
 | `work-steps` | The prompts to paste next, without executing them |

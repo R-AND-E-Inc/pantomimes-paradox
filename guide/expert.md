@@ -12,6 +12,6 @@ Install: `/plugin marketplace add R-AND-E-Inc/pantomimes-paradox` then `/plugin 
 
 **Templates.** `templates/project/`: root instructions with the information-ownership table, operating profile, project state (optional JSON block), phase history, PR completion packet, change-based CI selector + starter workflow, phase-tag workflow, register/card/packet trio, tool-procedure file.
 
-**Codex.** Same tree carries `.codex-plugin/plugin.json` and per-skill `agents/openai.yaml`; commands are `$work-*`. Less tested; see `guide/codex.md`.
+**Codex.** `codex plugin marketplace add R-AND-E-Inc/pantomimes-paradox` then `codex plugin add pantomimes-paradox@pantomimes-paradox`; commands are `$work-*`; no plugin subagent, so review runs as a separate task. **Chat only.** Per-skill zips on each release (`scripts/build_exports.py`); see `guide/chatgpt.md`.
 
 **Maintaining.** `docs/maintaining.md`. Never edit a released playbook; add a release, build its manifest, bump the plugin version, tag.

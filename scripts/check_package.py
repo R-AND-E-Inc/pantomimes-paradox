@@ -20,6 +20,9 @@ def main():
     plugin = json.loads((ROOT / ".claude-plugin/plugin.json").read_text())
     marketplace = json.loads((ROOT / ".claude-plugin/marketplace.json").read_text())
     codex = json.loads((ROOT / ".codex-plugin/plugin.json").read_text())
+    codex_market = json.loads((ROOT / ".agents/plugins/marketplace.json").read_text())
+    if codex_market["plugins"][0]["name"] != "pantomimes-paradox" or codex_market["plugins"][0]["source"]["path"] != "./":
+        problems.append("Codex marketplace entry must point at this repository root")
     json.loads((ROOT / "hooks/hooks.json").read_text())
     if not (plugin["name"] == marketplace["plugins"][0]["name"] == codex["name"] == "pantomimes-paradox"):
         problems.append("plugin names differ across manifests")
@@ -33,8 +36,15 @@ def main():
         text = path.read_text()
         if not text.startswith("---\nname: " + skill + "\n"):
             problems.append("skill frontmatter name mismatch: " + skill)
-        if "description:" not in text.split("---", 2)[1]:
+        front = text.split("---", 2)[1]
+        if "description:" not in front:
             problems.append("skill without description: " + skill)
+        for line in front.splitlines():
+            key, sep, value = line.partition(": ")
+            if sep and key in {"name", "description"} and ": " in value and not value.startswith('"'):
+                problems.append("unquoted colon in frontmatter %s of %s" % (key, skill))
+            if key == "argument-hint":
+                problems.append("argument-hint is rejected by the Codex validator: " + skill)
         if not (ROOT / "skills" / skill / "agents/openai.yaml").exists():
             problems.append("missing Codex interface file: " + skill)
     for extra in (ROOT / "skills").iterdir():

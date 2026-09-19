@@ -23,7 +23,7 @@ Open Claude Code and run:
 /plugin install pantomimes-paradox@pantomimes-paradox
 ```
 
-Start a new session so the plugin loads. That is the whole installation.
+Start a new session so the plugin loads. That is the whole installation. Codex users run `codex plugin marketplace add R-AND-E-Inc/pantomimes-paradox` and `codex plugin add pantomimes-paradox@pantomimes-paradox` instead, and type `$paradox-setup` rather than the slash form; everything else below is the same ([codex.md](codex.md)).
 
 ## Your first ten minutes
 

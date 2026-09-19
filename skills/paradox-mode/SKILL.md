@@ -1,7 +1,6 @@
 ---
 name: paradox-mode
-description: Show or switch The Pantomime's Paradox guidance mode for this project — guided (explains every step) or expert (one-line handoffs). Use for "switch to expert", "explain more", "less detail", "what mode am I in".
-argument-hint: "[guided|expert]"
+description: "Show or switch The Pantomime's Paradox guidance mode for this project — guided (explains every step) or expert (one-line handoffs). Use for 'switch to expert', 'explain more', 'less detail', 'what mode am I in'."
 allowed-tools: Read, Glob, Grep, Edit
 ---
 

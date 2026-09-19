@@ -21,7 +21,7 @@ Then set `BOOTSTRAP` in `scripts/resolve_workflow.py` to the new release and cha
 
 ## Cutting a plugin release without a process change
 
-Skills, library, templates, guides and scripts can change without a new playbook release. Bump the plugin `version`, run the checks, tag.
+Skills, library, templates, guides and scripts can change without a new playbook release. Bump the plugin `version` in both manifests (both Claude Code and Codex cache by version, so an unchanged version is never re-fetched), run the checks, tag, and attach the chat exports to the GitHub release.
 
 ## Checks
 
@@ -31,6 +31,10 @@ python3 scripts/build_manifests.py --check
 python3 scripts/check_package.py
 node --test templates/project/.github/scripts/select-ci.test.mjs
 claude plugin validate .
+# Codex validators live in Codex's bundled skills and need PyYAML:
+# python3 ~/.codex/skills/.system/plugin-creator/scripts/validate_plugin.py .
+# python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/<name>
+python3 scripts/build_exports.py --output /tmp/pp-exports   # chat-only zips; attach to the release
 ```
 
 `verify.yml` runs the first four on every push. `claude plugin validate` checks the manifests, not the skills' behaviour. `check_package.py` also refuses stray files, oversized files, and project-specific words leaking into shared text.

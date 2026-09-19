@@ -1,14 +1,19 @@
 ---
 name: work-adopt
-description: Inspect an existing project and prepare, or carry out when authorized, its adoption of The Pantomime's Paradox, preserving in-flight work. Use for 'bring this repo under the workflow', 'adopt this project'.
-argument-hint: "[project or scope to adopt]"
+description: "Inspect an existing project and prepare, or carry out when authorized, its adoption of The Pantomime's Paradox, preserving in-flight work. Use for 'bring this repo under the workflow', 'adopt this project'."
 allowed-tools: Bash(python3 ${CLAUDE_PLUGIN_ROOT}/scripts/resolve_workflow.py:*), Read, Glob, Grep
 ---
 
-Resolve the project's pinned process release before applying any process instruction. The package root is `${CLAUDE_PLUGIN_ROOT}` on Claude Code, or two directories above this file elsewhere:
+Resolve the project's pinned process release before applying any process instruction. On Claude Code:
 
 ```sh
 python3 "${CLAUDE_PLUGIN_ROOT}/scripts/resolve_workflow.py" --project-root "${CLAUDE_PROJECT_DIR}" --skill work-adopt
+```
+
+On Codex or any other assistant, the package root is two directories above this `SKILL.md` and the project root is the working directory:
+
+```sh
+python3 "<package root>/scripts/resolve_workflow.py" --project-root "$PWD" --skill work-adopt
 ```
 
 For a project that has not adopted, add `--bootstrap`; that reads guidance and adopts nothing. For an adopted project run it without the flag.
