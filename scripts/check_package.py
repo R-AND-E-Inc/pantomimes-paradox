@@ -6,6 +6,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+AGENTS = ["work-independent-reviewer", "work-explorer", "work-researcher", "work-verifier"]
 SKILLS = ["work-start", "work-adopt", "work-steps", "work-plan", "work-resume", "work-deliver",
           "work-review", "work-evidence", "work-flow-check", "work-closeout", "paradox-setup", "paradox-mode"]
 # Words that belong to the owner's own projects, not to the shared package. Provenance and the
@@ -47,6 +48,21 @@ def main():
                 problems.append("argument-hint is rejected by the Codex validator: " + skill)
         if not (ROOT / "skills" / skill / "agents/openai.yaml").exists():
             problems.append("missing Codex interface file: " + skill)
+    for agent in AGENTS:
+        path = ROOT / "agents" / (agent + ".md")
+        if not path.exists():
+            problems.append("missing agent: " + agent)
+            continue
+        front = path.read_text().split("---", 2)[1]
+        if "name: " + agent not in front:
+            problems.append("agent frontmatter name mismatch: " + agent)
+        if agent != "work-independent-reviewer" and "model:" not in front:
+            problems.append("delegate without an explicit model: " + agent)
+        if "disallowedTools:" not in front:
+            problems.append("agent without a write denylist: " + agent)
+    for extra in (ROOT / "agents").iterdir():
+        if extra.suffix == ".md" and extra.stem not in AGENTS:
+            problems.append("unexpected agent file: " + extra.name)
     for extra in (ROOT / "skills").iterdir():
         if extra.is_dir() and extra.name not in SKILLS:
             problems.append("unexpected skill folder: " + extra.name)

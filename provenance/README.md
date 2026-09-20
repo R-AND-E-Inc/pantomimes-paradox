@@ -6,6 +6,7 @@ Records of how earlier packages became this one. They explain decisions; they is
 - `process-1.1-amendment.md` — practical judgment before correction loops and coordinator-led delivery (process 1.1.0).
 - `process-1.2-claude-port.md` and `CONVERSION-NOTES.md` — the port from Codex to Claude Code (process 1.2.0).
 - `process-2.0.0.md` — the first release under the name The Pantomime's Paradox.
+- `process-2.1.0.md` — the delegation roster, retrieval hygiene and terse mode.
 - `ECC-LICENSE.txt` — MIT notice for Everything Claude Code, whose ideas informed early releases.
 
 The full-text traceability ledgers from the earlier packages are not carried here; they remain in the private history of the former repository.

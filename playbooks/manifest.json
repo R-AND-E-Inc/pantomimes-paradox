@@ -1,5 +1,5 @@
 {
-  "bootstrap": "2.0.0",
+  "bootstrap": "2.1.0",
   "plugin": "pantomimes-paradox",
   "releases": {
     "1.0.0": {
@@ -13,6 +13,9 @@
     },
     "2.0.0": {
       "manifest_sha256": "cd6558a8cfa3ee32f2463854f9a983b48cb82d4410522a59732287d5b2acbbcc"
+    },
+    "2.1.0": {
+      "manifest_sha256": "6951a8d4b33d0562f76dd775eb7896ff8d7069eaa1aeda6a8cbcf6aeefb76fbd"
     },
     "legacy-personal-workflows": {
       "manifest_sha256": "7a285cb257317a1c1efbe00113c6b20754dd17868d5dfbf79461e0675a5d86fa"

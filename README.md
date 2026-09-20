@@ -54,7 +54,7 @@ Each release carries one zip per skill for chat surfaces that cannot run the res
 | `work-evidence` | Does the evidence prove the claim for this exact candidate? |
 | `work-flow-check` | Trace one user interaction end to end |
 | `work-closeout` | Close a milestone, update the records, name the next action |
-| `paradox-mode` | Switch between guided and expert |
+| `paradox-mode` | Switch between guided, expert and terse |
 
 Read [guide/guided.md](guide/guided.md) for the long version or [guide/expert.md](guide/expert.md) for the one-page version. [guide/commands.md](guide/commands.md) has one paragraph per command.
 
@@ -64,6 +64,7 @@ Read [guide/guided.md](guide/guided.md) for the long version or [guide/expert.md
 - **The method lives in `playbooks/`**, one shared core plus one file per stage. **Discovery, planning, risk and release references live in `library/`** and load only when their stage opens. **Project scaffolds live in `templates/`.**
 - **Every reply ends with a handoff:** where things stand and the single next action you can take now.
 - **Independent review is mechanical, not a promise:** a fresh-context reviewer with no editing tools and instructions to change nothing, given the candidate and the requirements but not the author's verdict.
+- **Bulk work is delegated so the session stays clear:** reading, external lookups and long check runs go to bounded helpers that return conclusions and citations rather than material. They run on a smaller model; anything judging correctness does not.
 
 ## Lineage and licence
 

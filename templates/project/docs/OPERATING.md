@@ -9,6 +9,8 @@ placeholder values, so the profile is not effective until they are replaced. Del
 
 Guidance mode: guided
 
+<!-- guided explains every step; expert gives one-line handoffs; terse strips the body too. -->
+
 <!-- pantomimes-paradox:begin -->
 {
   "schema": 1,
@@ -38,6 +40,20 @@ The owner decides product scope, resolves tradeoffs, judges the experience where
 | Full suite | |
 | Lint and typecheck | |
 | Build | |
+
+## Delegation and model routing
+
+Delegate a bounded question whose material would otherwise fill the working context, and whose result is a report rather than an edit: reading to `work-explorer`, external questions to `work-researcher`, named checks to `work-verifier`, and required independent review to `work-independent-reviewer`. Do not delegate work that writes to this project, needs the owner's judgment, or is a handful of tool calls.
+
+Route a model by what the work decides, not by how much of it there is. Retrieval and mechanical reporting may run on a smaller model; anything judging correctness, persistence, security or acceptance runs on the session model.
+
+| Work | Model |
+| --- | --- |
+| Reading, searching, external lookups, reporting raw check output | Smaller model (the package's delegates default to this) |
+| Planning, implementation, corrections, drift checks | Session model |
+| Persistence, migrations, state machines, security boundaries, async lifecycle, independent review, release decisions | Session model, never routed down |
+
+<!-- A skill may also carry `model:` in its own frontmatter. That resets the cached context on each invocation, so add it only where the skill is long enough to repay the reset. -->
 
 ## Risk tiers and review
 

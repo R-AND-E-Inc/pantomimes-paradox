@@ -11,7 +11,7 @@ The Pantomime's Paradox is a set of rules the assistant follows so that none of 
 1. **It understands the product before it chooses technology.** It asks a few questions at a time, proposes answers you only have to correct, and does not write code until the plan is sufficient.
 2. **It works in small slices you can check.** Each slice names one thing you will be able to do at the end that you could not do before.
 3. **It proves what it claims.** "Tests pass" comes with which tests, at which exact version, in which environment. A test that did not run is never a pass.
-4. **Risky changes get a second, fresh pair of eyes.** A separate reviewer that did not write the code and is not told what to conclude.
+4. **Risky changes get a second, fresh pair of eyes.** A separate reviewer that did not write the code and is not told what to conclude. Bulk reading, long check output and external lookups also go to separate helpers, so the session stays focused on your decisions rather than filling up with material.
 5. **Every reply ends with the next step.** One thing you can do right now.
 
 ## Installing it
@@ -33,7 +33,7 @@ Open Claude Code in a folder. It can be empty (a new idea) or an existing projec
 /pantomimes-paradox:paradox-setup
 ```
 
-It will check that the plugin is intact, ask whether you want guided or expert mode, ask whether this is a new idea or an existing codebase, and give you the one prompt to paste next. Guided mode means every reply explains what just happened, why the next step matters, what you will see, and how to tell it worked. You can switch any time with `/pantomimes-paradox:paradox-mode expert`.
+It will check that the plugin is intact, ask whether you want guided or expert mode, ask whether this is a new idea or an existing codebase, and give you the one prompt to paste next. Guided mode means every reply explains what just happened, why the next step matters, what you will see, and how to tell it worked. You can switch any time with `/pantomimes-paradox:paradox-mode expert`, or `terse` for the shortest useful replies.
 
 ### A new idea
 
@@ -117,7 +117,7 @@ You decide what the product should do, resolve the tradeoffs that matter, judge 
 - **It keeps failing the same fix.** After two failed attempts on one defect the workflow requires a fresh context, and after three rounds it stops and asks you to split, defer or replan. That is the rule working, not the tool failing.
 - **It says something cannot be verified.** That is a real answer. Ask what would make it verifiable, or accept the gap on record.
 - **It says the process release cannot be resolved.** The project pins an exact release and the installed plugin does not carry it, or the files do not match their hashes. Reinstall the plugin; never edit the pin to make the error go away.
-- **You want less explanation.** `/pantomimes-paradox:paradox-mode expert`.
+- **You want less explanation.** `/pantomimes-paradox:paradox-mode expert`, or `terse` for the shortest replies that are still honest. No mode hides a failure, a limitation or something needing your approval.
 
 ## Updating
 
