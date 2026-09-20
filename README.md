@@ -19,7 +19,7 @@ Then, in the folder of a project (new or existing):
 /pantomimes-paradox:paradox-setup
 ```
 
-That checks the install, asks whether you want **guided** (explains each step) or **expert** (one-line handoffs), and hands you the exact next prompt. From there you can just talk normally; the assistant picks the right skill. Commands are shortcuts, not homework.
+That checks the install, asks whether you want **guided** (explains each step), **expert** (one-line handoffs) or **terse** (findings only), and hands you the exact next prompt. From there you can just talk normally; the assistant picks the right skill. Commands are shortcuts, not homework.
 
 To try it for one session without installing: `claude --plugin-dir /path/to/pantomimes-paradox`.
 
@@ -42,7 +42,7 @@ Each release carries one zip per skill for chat surfaces that cannot run the res
 
 | Command | What it does |
 | --- | --- |
-| `paradox-setup` | First-time check, choose guided or expert, route to a new or existing project |
+| `paradox-setup` | First-time check, choose guided, expert or terse, route to a new or existing project |
 <!-- On Codex every command is $name instead of /pantomimes-paradox:name -->
 | `work-start` | Turn an idea into a product understanding, a plan and a first slice |
 | `work-adopt` | Bring an existing codebase under the workflow without restarting it |

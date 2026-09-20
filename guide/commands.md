@@ -1,10 +1,10 @@
 # Commands
 
-On Claude Code every command is `/pantomimes-paradox:<name>`; on Codex it is `$<name>`. Plain language reaches the same skills; the commands are the reliable spelling. Every command ends with a handoff: where the work stands and the one next action.
+On Claude Code every command is `/pantomimes-paradox:<name>`; on Codex it is `$<name>`. Plain language reaches the same skills; the commands are the reliable spelling. Every command ends with a handoff: where the work stands and the one next action. Bulk reading, external lookups and long check runs are delegated to bounded helpers (`work-explorer`, `work-researcher`, `work-verifier`) so their material never fills the session.
 
-**paradox-setup** — First run. Confirms the package is intact, asks guided or expert, asks new idea or existing code, and gives the next prompt. Creates nothing.
+**paradox-setup** — First run. Confirms the package is intact, asks guided, expert or terse, asks new idea or existing code, and gives the next prompt. Creates nothing.
 
-**paradox-mode** — Shows or switches the guidance mode for this project (`guided` explains each step; `expert` is one line). Changes only that line in the project's profile.
+**paradox-mode** — Shows or switches the guidance mode for this project: `guided` explains each step, `expert` keeps an ordinary reply with a one-line handoff, `terse` strips the reply to findings and what you must act on. No mode hides a limitation, a failure or something needing your approval. Changes only that line in the project's profile.
 
 **work-start** — A new project. Restates the idea, separates facts from assumptions, interviews you in small batches with proposed answers, forms the product contract, chooses the simplest architecture, reviews risk, sequences the first slices, and creates the project documents when you say so. It plans; it does not build until you give a new instruction.
 

@@ -33,7 +33,7 @@ Open Claude Code in a folder. It can be empty (a new idea) or an existing projec
 /pantomimes-paradox:paradox-setup
 ```
 
-It will check that the plugin is intact, ask whether you want guided or expert mode, ask whether this is a new idea or an existing codebase, and give you the one prompt to paste next. Guided mode means every reply explains what just happened, why the next step matters, what you will see, and how to tell it worked. You can switch any time with `/pantomimes-paradox:paradox-mode expert`, or `terse` for the shortest useful replies.
+It will check that the plugin is intact, ask whether you want guided, expert or terse mode, ask whether this is a new idea or an existing codebase, and give you the one prompt to paste next. Guided mode means every reply explains what just happened, why the next step matters, what you will see, and how to tell it worked. You can switch any time with `/pantomimes-paradox:paradox-mode expert`, or `terse` for the shortest useful replies.
 
 ### A new idea
 
@@ -110,7 +110,7 @@ You decide what the product should do, resolve the tradeoffs that matter, judge 
 - **PASS / FAIL / BLOCKED / WAIVED / NOT APPLICABLE:** the only allowed results. Waived means you accepted the gap on purpose; it is never a pass.
 - **Independent review:** a fresh context that did not write the code and is not told what to find.
 - **Handoff:** the last lines of every reply: where things stand and what to do next.
-- **Guidance mode:** guided or expert; how much the handoff explains.
+- **Guidance mode:** guided, expert or terse; how much is explained. No mode hides a failure, a limitation or something needing your approval.
 
 ## When something goes wrong
 
