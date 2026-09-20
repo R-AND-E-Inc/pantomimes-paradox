@@ -24,6 +24,12 @@ Both statements were in `guide/codex.md` and the Codex AGENTS snippet, and both 
 
 Each new check was proven to fail when violated, on 2026-09-20: removing a Codex delegate, adding routed effort to the reviewer, restoring `hooks` to the Codex manifest, and weakening the loader's delegate disclosure each produced the expected failure, and the tree passed with them restored.
 
+## Fix in 1.3.1
+
+`check_package.py` imported `tomllib` unconditionally to read the Codex delegates. `tomllib` arrives in Python 3.11, and the verify workflow runs 3.10 and 3.13, so the 3.10 job failed on the 1.3.0 commit with `ModuleNotFoundError: No module named 'tomllib'`. The tag was not moved; 1.3.1 carries the fix.
+
+The import is now guarded with a line scanner used where `tomllib` is absent, so the same properties are still checked on 3.10 rather than silently skipped, and the check reports which reader ran. Writing that fallback immediately exposed a second fault in itself: it read every triple-quoted `developer_instructions` as empty and reported all four delegates as missing it. `tests/test_codex_agents.py` now asserts the scanner and `tomllib` return identical fields and values for every delegate, and that the whole check passes on both paths.
+
 ## Not done
 
 No Codex hook config is shipped. The AGENTS.md snippet already carries the standing behaviour, is stable across installed versions, and does not depend on a version-numbered cache path. Shipping both would give one rule two owners, which the method forbids.

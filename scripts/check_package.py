@@ -3,7 +3,42 @@
 import json
 import re
 import sys
-import tomllib
+
+try:  # tomllib is 3.11+; this check must still run on the oldest supported Python.
+    import tomllib
+except ModuleNotFoundError:  # pragma: no cover - exercised by the 3.10 CI job
+    tomllib = None
+
+
+def read_agent_toml(text):
+    """Return the delegate's declared fields, parsed or scanned.
+
+    With tomllib this is a real parse. Without it, scan top-level `key = "value"` lines,
+    which is enough for every field this check inspects and never reports a field the file
+    does not declare. Multi-line values are ignored deliberately: nothing checked here is
+    multi-line except developer_instructions, whose presence a scan still detects.
+    """
+    if tomllib is not None:
+        return tomllib.loads(text), "parsed"
+    value = {}
+    lines = text.splitlines()
+    index = 0
+    while index < len(lines):
+        match = re.match(r'^([A-Za-z_]+)\s*=\s*(.*)$', lines[index])
+        index += 1
+        if not match:
+            continue
+        key, raw = match.group(1), match.group(2).strip()
+        if raw.startswith('"""'):
+            body = []
+            while index < len(lines) and not lines[index].startswith('"""'):
+                body.append(lines[index])
+                index += 1
+            index += 1
+            value[key] = "\n".join(body).strip()
+        else:
+            value[key] = raw.strip('"')
+    return value, "scanned"
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -19,6 +54,7 @@ MAX_BYTES = 300_000
 
 def main():
     problems = []
+    modes = set()
     plugin = json.loads((ROOT / ".claude-plugin/plugin.json").read_text())
     marketplace = json.loads((ROOT / ".claude-plugin/marketplace.json").read_text())
     codex = json.loads((ROOT / ".codex-plugin/plugin.json").read_text())
@@ -75,10 +111,11 @@ def main():
             problems.append("missing Codex delegate template: " + agent)
             continue
         try:
-            value = tomllib.loads(path.read_text())
-        except tomllib.TOMLDecodeError as error:
+            value, how = read_agent_toml(path.read_text())
+        except Exception as error:  # noqa: BLE001 - any TOML fault is a package problem
             problems.append("unparsable Codex delegate %s: %s" % (agent, error))
             continue
+        modes.add(how)
         unknown = set(value) - {"name", "description", "developer_instructions", "model",
                                 "model_reasoning_effort", "sandbox_mode", "mcp_servers"}
         if unknown:
@@ -118,7 +155,8 @@ def main():
                     problems.append("project-specific text at %s:%d" % (path.relative_to(ROOT), number))
     for problem in problems:
         print(problem)
-    print(json.dumps({"status": "ok" if not problems else "problems", "count": len(problems)}))
+    print(json.dumps({"status": "ok" if not problems else "problems", "count": len(problems),
+                      "codex_agents": "".join(sorted(modes)) or "none"}))
     return 1 if problems else 0
 
 
