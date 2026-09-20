@@ -1,6 +1,6 @@
 {
   "name": "pantomimes-paradox",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "One reusable, versioned workflow for building software with an AI coding assistant: discovery, planning, delivery, independent review, evidence and closeout, with every response ending in the next step.",
   "author": {
     "name": "R-AND-E-Inc"

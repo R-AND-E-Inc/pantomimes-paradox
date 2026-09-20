@@ -3,6 +3,7 @@
 import json
 import re
 import sys
+import tomllib
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -29,6 +30,8 @@ def main():
         problems.append("plugin names differ across manifests")
     if plugin["version"] != codex["version"]:
         problems.append("plugin versions differ between Claude and Codex manifests")
+    if "hooks" in codex:
+        problems.append("the Codex plugin validator rejects a hooks field in the manifest")
     for skill in SKILLS:
         path = ROOT / "skills" / skill / "SKILL.md"
         if not path.exists():
@@ -63,6 +66,37 @@ def main():
     for extra in (ROOT / "agents").iterdir():
         if extra.suffix == ".md" and extra.stem not in AGENTS:
             problems.append("unexpected agent file: " + extra.name)
+    # Codex cannot declare agents in a plugin manifest, so the same roster ships as templates the
+    # user copies into ~/.codex/agents. The two rosters must not drift apart.
+    codex_agents = ROOT / "templates/codex/agents"
+    for agent in AGENTS:
+        path = codex_agents / (agent + ".toml")
+        if not path.exists():
+            problems.append("missing Codex delegate template: " + agent)
+            continue
+        try:
+            value = tomllib.loads(path.read_text())
+        except tomllib.TOMLDecodeError as error:
+            problems.append("unparsable Codex delegate %s: %s" % (agent, error))
+            continue
+        unknown = set(value) - {"name", "description", "developer_instructions", "model",
+                                "model_reasoning_effort", "sandbox_mode", "mcp_servers"}
+        if unknown:
+            problems.append("undocumented Codex agent field in %s: %s" % (agent, ", ".join(sorted(unknown))))
+        for required in ("name", "description", "developer_instructions"):
+            if not value.get(required):
+                problems.append("Codex delegate %s is missing %s" % (agent, required))
+        if value.get("name") != agent:
+            problems.append("Codex delegate name mismatch: " + agent)
+        if value.get("sandbox_mode") not in {"read-only", "workspace-write"}:
+            problems.append("Codex delegate %s needs a bounded sandbox_mode" % agent)
+        if agent == "work-independent-reviewer" and "model_reasoning_effort" in value:
+            problems.append("the reviewer must inherit the session model and effort, not be routed down")
+        if agent != "work-independent-reviewer" and "model_reasoning_effort" not in value:
+            problems.append("Codex delegate without routed effort: " + agent)
+    for extra in codex_agents.iterdir():
+        if extra.suffix == ".toml" and extra.stem not in AGENTS:
+            problems.append("unexpected Codex delegate file: " + extra.name)
     for extra in (ROOT / "skills").iterdir():
         if extra.is_dir() and extra.name not in SKILLS:
             problems.append("unexpected skill folder: " + extra.name)

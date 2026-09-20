@@ -51,7 +51,14 @@ def loader_text(skill, description, paths, release):
         "name each such gap. A copyable prompt is not execution.\n"
         "4. For a project that has not adopted the workflow, only `work-start` and `work-adopt` may use this "
         "export as bootstrap guidance; other skills need an adopted project.\n"
-        "5. End every reply with where the work stands and the single next action (core rule C07).\n"
+        "5. **This surface has no delegates.** The process names `work-explorer`, `work-researcher`, "
+        "`work-verifier` and `work-independent-reviewer`; none of them exist in a plain chat. Do the bounded "
+        "work yourself where the conversation allows it and say that no delegate ran, or return the brief for "
+        "the user to run in Codex or Claude Code. Never describe a delegate's report you did not receive, and "
+        "never call a same-context second pass an independent review.\n"
+        "6. End every reply with where the work stands and the single next action (core rule C07), in the "
+        "project's guidance mode: guided, expert, or terse, with guided the default when none is recorded. "
+        "No mode removes a disclosed limitation, an unverified claim, a failure, or a required approval.\n"
     )
 
 

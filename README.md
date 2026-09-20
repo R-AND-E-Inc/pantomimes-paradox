@@ -32,7 +32,7 @@ codex plugin marketplace add R-AND-E-Inc/pantomimes-paradox
 codex plugin add pantomimes-paradox@pantomimes-paradox
 ```
 
-New thread, then `$paradox-setup`. Details and differences: [guide/codex.md](guide/codex.md).
+New thread, then `$paradox-setup`. Codex supports delegates but has no plugin field to declare them, so copy `templates/codex/agents/*.toml` into `~/.codex/agents/` once. Details and differences: [guide/codex.md](guide/codex.md).
 
 ## Chat only (ChatGPT or claude.ai)
 

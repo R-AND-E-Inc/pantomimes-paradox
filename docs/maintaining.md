@@ -37,7 +37,7 @@ claude plugin validate .
 python3 scripts/build_exports.py --output /tmp/pp-exports   # chat-only zips; attach to the release
 ```
 
-`verify.yml` runs the first four on every push. `claude plugin validate` checks the manifests, not the skills' behaviour. `check_package.py` also refuses stray files, oversized files, and project-specific words leaking into shared text.
+`check_package.py` also holds the Claude and Codex delegate rosters in sync, so adding an agent means adding both `agents/<name>.md` and `templates/codex/agents/<name>.toml`. `verify.yml` runs the first four on every push. `claude plugin validate` checks the manifests, not the skills' behaviour. `check_package.py` also refuses stray files, oversized files, and project-specific words leaking into shared text.
 
 ## Adoption block reference
 

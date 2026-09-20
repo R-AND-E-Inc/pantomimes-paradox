@@ -42,6 +42,13 @@ class ExportTests(unittest.TestCase):
                     self.assertEqual(json.loads(z.read(skill + "/identity.json")), first["identity"])
                     loader = z.read(skill + "/SKILL.md").decode()
                     self.assertTrue(loader.startswith("---\nname: " + skill + "\n"))
+                    # A chat surface has no delegates and no resolver; the loader must say so,
+                    # or the assistant will read C05's roster and claim a delegate it never had.
+                    self.assertIn("no delegates", loader)
+                    for role in ("work-explorer", "work-researcher", "work-verifier",
+                                 "work-independent-reviewer"):
+                        self.assertIn(role, loader)
+                    self.assertIn("guidance mode", loader)
                     for name in manifest["skills"][skill]:
                         content = z.read(skill + "/payload/" + name)
                         self.assertEqual(content, (root / "playbooks" / release / name).read_bytes())

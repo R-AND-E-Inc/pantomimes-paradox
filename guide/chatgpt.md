@@ -4,7 +4,7 @@ A plain chat cannot run the package's resolver, read your repository on its own,
 
 ## Get the exports
 
-Every release on GitHub carries one zip per skill named `<skill>-chat-<release>.zip` (for example `work-plan-chat-2.0.0.zip`): https://github.com/R-AND-E-Inc/pantomimes-paradox/releases
+Every release on GitHub carries one zip per skill named `<skill>-chat-<release>.zip` (for example `work-plan-chat-2.1.0.zip`, from the newest release): https://github.com/R-AND-E-Inc/pantomimes-paradox/releases
 
 Each zip holds a loader `SKILL.md`, the exact process files that skill needs, and `identity.json` recording the release and its manifest hash.
 
@@ -18,8 +18,8 @@ The exact menu names change; the zip is the same for both.
 ## What to expect
 
 - The assistant reads `identity.json` and the process files, then works from what you paste or attach. Give it the project's `docs/OPERATING.md` and `docs/PROJECT_STATE.md` when you have them.
-- Anything it cannot do in chat (run tests, open a pull request, dispatch a reviewer) is named as a gap in its reply rather than claimed. Copy its prompts into Codex or Claude Code for the parts that need a machine.
-- Every reply still ends with where the work stands and your next action.
+- Anything it cannot do in chat is named as a gap rather than claimed: running tests, opening a pull request, and handing work to the package's delegates, which do not exist on this surface. A chat cannot give you an independent review of its own work, and it is told to say so rather than call a second pass independent. Copy its prompts into Codex or Claude Code for the parts that need a machine.
+- Every reply still ends with where the work stands and your next action, in whichever mode your project records: guided, expert or terse.
 
 ## Building the exports yourself
 

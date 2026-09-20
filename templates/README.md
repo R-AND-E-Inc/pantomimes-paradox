@@ -15,4 +15,6 @@ Scaffolds that `work-start` and `work-adopt` copy into a project, proportionate 
 | `project/docs/plans/register.md`, `cards.md`, `project/docs/evidence/packet.md` | The project delivers one card at a time | Status, scope, evidence, in that order |
 | `project/docs/tools/TOOL-PROCEDURE.md` | An optional tool needs a written procedure | A procedure that grants no authority |
 
+`codex/` is not a project scaffold. It holds the two things a Codex user installs once into their own Codex configuration: `agents/*.toml`, the four delegate roles, copied into `~/.codex/agents/` because a Codex plugin cannot declare agents; and `AGENTS-global-snippet.md`, the standing reply behaviour that Claude Code gets from a session-start hook. See `guide/codex.md`.
+
 The product brief, decisions, assumptions, risks and backlog registries come from `library/foundry/templates/` when discovery produces them; those files are not duplicated here.
