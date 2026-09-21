@@ -52,8 +52,10 @@ Every command is `$<name>`: `$paradox-setup`, `$work-start`, `$work-adopt`, `$wo
 ## Update
 
 ```sh
-codex plugin marketplace upgrade
+codex plugin marketplace upgrade pantomimes-paradox
 codex plugin add pantomimes-paradox@pantomimes-paradox
 ```
 
 Then start a new thread. An update never changes a project's pinned release. Re-copy the agent templates after an update only if the release notes say the roster changed.
+
+For separate source/payload/install/enabled/invocation evidence and running-task activation, use [the activation receipt](../docs/activation.md). An explicitly loaded source skill is not native discovery proof.

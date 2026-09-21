@@ -1,0 +1,60 @@
+{
+  "files": {
+    "core.md": "ecd31cd6f87b35e5371ebf8277db71c54060177b9bc0aed95ca69a95ff008def",
+    "stages/adopt.md": "af77385ba4a0c465fcdefb1f0d9ecda825a642332a9716ea9224248d9076693d",
+    "stages/closeout.md": "8543b670b962cbcc09e3b86ef0c8ee46ad956bae5bf4091ab194329f703ee83e",
+    "stages/deliver.md": "dcdc3d551a36d09a55228f2b06c51a494302897054135abe22dd1c7645365334",
+    "stages/evidence.md": "c842e57c34d8d868cda04045cf36bc888c8c2f2d0e6b7f5c2e4bfdd22e31ed84",
+    "stages/flow-check.md": "94541334be1ddbde543100a008b3d9fba1652e5492fe16ce4d772334acc77e32",
+    "stages/plan.md": "605ac4317fb6ef856c1c8fc02db6ad73856fd718e16328f67bdc15fbab11c7bd",
+    "stages/resume.md": "598217ef1541068ee80c8be2f44a7e53628da02aab4a573fb061b12bb95c5308",
+    "stages/review.md": "759167a89433757e007aa131df80a60fbaca6b3258973e9b8357e91dd8849bc3",
+    "stages/start.md": "bf1f1f7567104ef8b5f11e8f5e4821e95a5c2a52f8e7b7ba91a8045a68de0b9f",
+    "stages/steps.md": "54229e9818698bbece82774d895c94f2bcad86942369d44b7e0abc942d577eb9"
+  },
+  "plugin": "pantomimes-paradox",
+  "release": "2.2.0",
+  "schema": 1,
+  "skills": {
+    "work-adopt": [
+      "core.md",
+      "stages/adopt.md"
+    ],
+    "work-closeout": [
+      "core.md",
+      "stages/closeout.md"
+    ],
+    "work-deliver": [
+      "core.md",
+      "stages/deliver.md"
+    ],
+    "work-evidence": [
+      "core.md",
+      "stages/evidence.md"
+    ],
+    "work-flow-check": [
+      "core.md",
+      "stages/flow-check.md"
+    ],
+    "work-plan": [
+      "core.md",
+      "stages/plan.md"
+    ],
+    "work-resume": [
+      "core.md",
+      "stages/resume.md"
+    ],
+    "work-review": [
+      "core.md",
+      "stages/review.md"
+    ],
+    "work-start": [
+      "core.md",
+      "stages/start.md"
+    ],
+    "work-steps": [
+      "core.md",
+      "stages/steps.md"
+    ]
+  }
+}

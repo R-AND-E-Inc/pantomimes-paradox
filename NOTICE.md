@@ -11,6 +11,8 @@ The Pantomime's Paradox is released under the MIT licence in `LICENSE`.
 
 Selected workflow ideas were informed by **Everything Claude Code** (ECC), copyright (c) 2026 Affaan Mustafa, MIT licence, inspected at revision `e04ea0b9cc8248686edf5ac751cadff550e162b8`, package 2.2.1. Its licence text is preserved in `provenance/ECC-LICENSE.txt`. No ECC runtime, hooks, agents, installers or telemetry are included, and this package does not claim ECC endorsement.
 
+Selected techniques in process 2.2.0 were informed by Superpowers, Ponytail and Agentic Awesome Skills. This package includes original adaptations, not their runtime or copied skill bundles. Exact revisions, source-license distinctions and adaptation boundaries are recorded in `provenance/process-2.2.0.md`.
+
 ## Provenance records
 
 `provenance/` holds the conversion and consolidation notes that explain how the earlier packages became this one. They are records, not instructions.

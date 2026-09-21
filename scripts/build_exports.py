@@ -18,6 +18,7 @@ sys.dont_write_bytecode = True
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from build_manifests import check_all  # noqa: E402
 from resolve_workflow import BOOTSTRAP, PLUGIN, check_release  # noqa: E402
+from package_inventory import check_inventory  # noqa: E402
 
 SOURCE_URL = "https://github.com/R-AND-E-Inc/pantomimes-paradox"
 
@@ -62,6 +63,28 @@ def loader_text(skill, description, paths, release):
     )
 
 
+def skill_files(root, release, skill, identity):
+    """Exact expected archive contents; no writes and no trust in an export receipt."""
+    manifest_bytes = (root / "playbooks" / release / "manifest.json").read_bytes()
+    manifest = json.loads(manifest_bytes)
+    paths = manifest["skills"][skill]
+    raw = (root / "skills" / skill / "SKILL.md").read_text()
+    description = ""
+    for line in raw.split("---", 2)[1].splitlines():
+        key, sep, value = line.partition(":")
+        if sep and key.strip() == "description":
+            description = value.strip().strip('"')
+    packet = {skill + "/payload/" + p: (root / "playbooks" / release / p).read_bytes() for p in paths}
+    if skill == "work-deliver":
+        for p in manifest["skills"]["work-steps"]:
+            packet[skill + "/payload/" + p] = (root / "playbooks" / release / p).read_bytes()
+    payload_names = [k.split("/payload/", 1)[1] for k in sorted(packet)]
+    packet[skill + "/SKILL.md"] = loader_text(skill, description, payload_names, release).encode()
+    packet[skill + "/payload/manifest.json"] = manifest_bytes
+    packet[skill + "/identity.json"] = (json.dumps(identity, indent=2) + "\n").encode()
+    return packet
+
+
 def build(root, output, release=BOOTSTRAP):
     root = Path(root).resolve()
     check_release(release)
@@ -69,6 +92,7 @@ def build(root, output, release=BOOTSTRAP):
     git = lambda *args: subprocess.check_output(["git", "-C", str(root), *args])  # noqa: E731
     if git("status", "--porcelain").strip():
         raise ValueError("Exports require a clean committed source tree")
+    package = check_inventory(root)
     commit = git("rev-parse", "HEAD").decode().strip()
     output = Path(output).resolve()
     if output == root or root in output.parents:
@@ -82,22 +106,10 @@ def build(root, output, release=BOOTSTRAP):
                 "source_commit": commit, "manifest_sha256": digest(manifest_bytes)}
     artifacts = []
     for skill, paths in sorted(manifest["skills"].items()):
-        raw = (root / "skills" / skill / "SKILL.md").read_text()
-        description = ""
-        for line in raw.split("---", 2)[1].splitlines():
-            key, sep, value = line.partition(":")
-            if sep and key.strip() == "description":
-                description = value.strip().strip('"')
-        packet = {skill + "/payload/" + p: (manifest_path.parent / p).read_bytes() for p in paths}
-        if skill == "work-deliver":
-            for p in manifest["skills"]["work-steps"]:
-                packet[skill + "/payload/" + p] = (manifest_path.parent / p).read_bytes()
-        payload_names = [k.split("/payload/", 1)[1] for k in sorted(packet)]
-        packet[skill + "/SKILL.md"] = loader_text(skill, description, payload_names, release).encode()
-        packet[skill + "/payload/manifest.json"] = manifest_bytes
-        packet[skill + "/identity.json"] = (json.dumps(identity, indent=2) + "\n").encode()
+        packet = skill_files(root, release, skill, identity)
         artifacts.append(archive(output / (skill + "-chat-" + release + ".zip"), packet))
-    receipt = {"source_commit": commit, "package_version": version, "identity": identity, "artifacts": artifacts}
+    receipt = {"source_commit": commit, "package_version": version, "identity": identity,
+               "package_inventory_sha256": package["inventory_sha256"], "artifacts": artifacts}
     (output / "exports-receipt.json").write_text(json.dumps(receipt, indent=2) + "\n")
     return receipt
 

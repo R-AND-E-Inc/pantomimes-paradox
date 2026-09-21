@@ -19,6 +19,7 @@ jobs:
       - run: python -B -m unittest discover -s tests -v
       - run: python scripts/build_manifests.py --check
       - run: python scripts/check_package.py
+      - run: python scripts/package_inventory.py --check
   templates:
     runs-on: ubuntu-latest
     steps:
@@ -29,3 +30,17 @@ jobs:
         with:
           node-version: '24'
       - run: node --test templates/project/.github/scripts/select-ci.test.mjs
+
+  release-alignment:
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: python scripts/build_exports.py --output "$RUNNER_TEMP/pp-exports"
+      - run: python scripts/check_release.py --tag "$GITHUB_REF_NAME" --exports "$RUNNER_TEMP/pp-exports"

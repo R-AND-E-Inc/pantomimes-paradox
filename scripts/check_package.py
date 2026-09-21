@@ -48,7 +48,7 @@ SKILLS = ["work-start", "work-adopt", "work-steps", "work-plan", "work-resume", 
 # Words that belong to the owner's own projects, not to the shared package. Provenance and the
 # frozen releases published under the former name are exempt.
 LEFTOVERS = re.compile(r"Artax|5D\.3A|vn_library|R-AND-E-Inc/personal-workflows|Truth and Reconciliation")
-CHECKED_TEXT = ["skills", "guide", "templates", "hooks", "agents", "README.md", "NOTICE.md", "playbooks/2.0.0", "docs"]
+CHECKED_TEXT = ["skills", "guide", "templates", "hooks", "agents", "README.md", "NOTICE.md", "docs"]
 MAX_BYTES = 300_000
 
 
@@ -144,7 +144,14 @@ def main():
             problems.append("stray file: " + str(path.relative_to(ROOT)))
         if path.stat().st_size > MAX_BYTES:
             problems.append("oversized file: " + str(path.relative_to(ROOT)))
-    for entry in CHECKED_TEXT:
+    catalog = json.loads((ROOT / "playbooks/manifest.json").read_text())
+    # Former-name releases are immutable history; scan every current-name process in the catalog.
+    releases = []
+    for release in catalog["releases"]:
+        manifest = json.loads((ROOT / "playbooks" / release / "manifest.json").read_text())
+        if manifest["plugin"] == "pantomimes-paradox":
+            releases.append("playbooks/" + release)
+    for entry in CHECKED_TEXT + releases:
         base = ROOT / entry
         files = [base] if base.is_file() else [p for p in base.rglob("*") if p.is_file()]
         for path in files:

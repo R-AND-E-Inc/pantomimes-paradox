@@ -14,6 +14,8 @@ Status and order are owned by the [register](register.md). These cards are appro
 
 **Implementation:** <what changes, at the level of seams and behaviors, not code>.
 
+**Shared interface, when consequential:** <consumed/produced representation; canonical owner; precondition; dependent task; omit when none>.
+
 **Deciding evidence:** <the smallest observation that decides the acceptance ID, its class, and its environment>.
 
 **Failure and compatibility cases:** <what must keep working; what must still refuse>.

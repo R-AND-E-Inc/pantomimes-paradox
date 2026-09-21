@@ -64,7 +64,7 @@ The default plugin root is the parent of the script's directory. `--plugin-root`
 | State | Result |
 |---|---|
 | No adoption block; one of the existing seven skills | `legacy` mode with the verified legacy payload. |
-| No adoption block; `work-start` or `work-adopt` with explicit `--bootstrap` | `bootstrap` mode using the verified bootstrap release declared by this package and supported by its resolver (currently `2.0.0`); no adoption is performed. |
+| No adoption block; `work-start` or `work-adopt` with explicit `--bootstrap` | `bootstrap` mode using the verified bootstrap release declared by this package and supported by its resolver (currently `2.2.0`); no adoption is performed. |
 | No adoption block; start/adopt without the flag | `bootstrap_required` error. |
 | No adoption block; `work-deliver` | `adoption_required` error. |
 | Adopted project; any known skill without bootstrap | `adopted` mode using that exact release. |
@@ -86,4 +86,4 @@ The default legacy mappings use `skills/<skill>/SKILL.md`. Unified mappings use 
 
 The builder includes every file below the selected release except its root `manifest.json`, rejects symlinks/special files, generates deterministic JSON, and updates the package manifest without removing older releases. It refuses to rewrite an existing release manifest when payload bytes changed. `--replace-unreleased` is only for preparing an unreleased staging payload; never use it to revise a published release. `--check` compares manifests without writing. Bare `--check` validates every cataloged release using its recorded skill mappings, requires release directories to match the catalog exactly, and requires both legacy and bootstrap payloads. A release build initially containing only the legacy payload may name its forthcoming bootstrap release; the completed distributable must contain that release and legacy before activation. Python 3.9 or later is required.
 
-Older release retention plus exact project selection preserves workflow instructions across package updates. For example, a project pinned to `1.0.0` continues using `1.0.0` even though this package bootstraps new projects with `2.0.0`. Dispatch remains deliberately small; it must not acquire a second process-policy implementation. Read-only resolution and payload identity checks do not guarantee perfect model adherence, protect against a compromised installation root, or establish native per-project plugin isolation.
+Older release retention plus exact project selection preserves workflow instructions across package updates. For example, a project pinned to `1.0.0` continues using `1.0.0` even though this package bootstraps new projects with `2.2.0`. Dispatch remains deliberately small; it must not acquire a second process-policy implementation. Read-only resolution and payload identity checks do not guarantee perfect model adherence, protect against a compromised installation root, or establish native per-project plugin isolation.
