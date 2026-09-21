@@ -1,0 +1,800 @@
+{
+  "bootstrap": "2.2.0",
+  "files": {
+    ".agents/plugins/marketplace.json": {
+      "bytes": 381,
+      "sha256": "0654a00888bfcd05e9fbc16111cc27bd261a54518871d4564071d0e687bb772e"
+    },
+    ".claude-plugin/marketplace.json": {
+      "bytes": 689,
+      "sha256": "77e5de679971dbd2e06279be7116192098e635b3bf131c43124bf6e899bb4024"
+    },
+    ".claude-plugin/plugin.json": {
+      "bytes": 692,
+      "sha256": "aed2dba5d7076fb5f62b0e3f26396fbed2ba7ebdea9da39d30d09c825c9fdf1c"
+    },
+    ".codex-plugin/plugin.json": {
+      "bytes": 873,
+      "sha256": "8b0cb0e2294902bc7a488cf41c26e1cc52e185c6912d9c013d45cdafc0681a7f"
+    },
+    ".github/workflows/verify.yml": {
+      "bytes": 1383,
+      "sha256": "c6074a727bab86bc6e29f043fa7493b4130c8af0ea253d327e5d2c9d318b858a"
+    },
+    ".gitignore": {
+      "bytes": 42,
+      "sha256": "4e3036f854d2d22899750fc7e7e9c3754f6a1a7df58472ed68c9168692b67730"
+    },
+    "LICENSE": {
+      "bytes": 1068,
+      "sha256": "533e287c359ce61d103dd29c655d658a703516f3e626602fb0d72d2e3e685d80"
+    },
+    "NOTICE.md": {
+      "bytes": 1662,
+      "sha256": "9a368d752c8edd71b3527c4b254beb6f68e63d319d92bfb44d110ea55a548b0d"
+    },
+    "README.md": {
+      "bytes": 4763,
+      "sha256": "1f935adeeb5010b54f3f48de1e449fa856f39382133753d6b40fb9806d504283"
+    },
+    "agents/work-explorer.md": {
+      "bytes": 1922,
+      "sha256": "71e850ac641f0f140f61d3b288ec0ff5cad37d25c4b258221dbe76694e5e1a1c"
+    },
+    "agents/work-independent-reviewer.md": {
+      "bytes": 2440,
+      "sha256": "21ac1d2852759b5a8609fc555564964afa5f9b4268c0b0852463b73ba0b2376f"
+    },
+    "agents/work-researcher.md": {
+      "bytes": 1809,
+      "sha256": "26874ba565c39efddf04bffa4d4fa567498702a16a425250fc138737c3668595"
+    },
+    "agents/work-verifier.md": {
+      "bytes": 2389,
+      "sha256": "a71f4c944563a23e11e111f6e006303b9c3d768e0094d04f5f0b99892b8d41b3"
+    },
+    "docs/activation.md": {
+      "bytes": 3711,
+      "sha256": "d3c26e5f39b2d9fdd0461fde052a1bed2db4f7a1b1189bbf5fea01af0a37b305"
+    },
+    "docs/maintaining.md": {
+      "bytes": 5749,
+      "sha256": "ad189d6f12943515c9cd898f0359fd9c273fee3e85cd974067b1080fd7236ca3"
+    },
+    "docs/project-state-contract.md": {
+      "bytes": 2452,
+      "sha256": "436790c30992d1ce5126529bd360b8df6633b5d12fb45dc97db2060c402687d2"
+    },
+    "docs/resolver-contract.md": {
+      "bytes": 9350,
+      "sha256": "153d2b784c3d8cf02d546c26c2ff5084e8f6b97351619824610af3088b30d24e"
+    },
+    "guide/chatgpt.md": {
+      "bytes": 2153,
+      "sha256": "9784a72c25da56443527f11c5c3eaedb5c6fe979f09cf93ea9fb72b0e01e8794"
+    },
+    "guide/codex.md": {
+      "bytes": 4741,
+      "sha256": "92bc7c605ff4f858259bb9d7d155631a946ccd46939f99abaceddc072a5df138"
+    },
+    "guide/commands.md": {
+      "bytes": 3558,
+      "sha256": "b115277ab6b82b142b12b2ec923988e6e03b8ba111cb453e2e04e79e03f086ab"
+    },
+    "guide/expert.md": {
+      "bytes": 4455,
+      "sha256": "2bc9d42b880f21580f764795562a3d95ece6d8da2c8f6f013685c0109a04465c"
+    },
+    "guide/guided.md": {
+      "bytes": 7738,
+      "sha256": "392af907cb3a660f04672e7375b0b2a8b6254f6c8c0db68bd763e3b7ca0f32a9"
+    },
+    "hooks/hooks.json": {
+      "bytes": 253,
+      "sha256": "002cd35aad74f5fa964970e1931d18e0ba79b619ce8c7a8fad82d403c9f217dc"
+    },
+    "hooks/session-context.md": {
+      "bytes": 1922,
+      "sha256": "630e56e452c562806f5fbe303ee965c4da2d8f12983f7ee80de2f69d00fb5c07"
+    },
+    "library/README.md": {
+      "bytes": 1566,
+      "sha256": "b9a57ba5d6389d1507f296ce55ffbbc85e5930c8de42eb67c4df47bb465c4901"
+    },
+    "library/foundry/CHANGELOG.md": {
+      "bytes": 21246,
+      "sha256": "8366d20e593209d9e9ad4afc0f5e7672721610479b8c35c05e85c5327f2fd940"
+    },
+    "library/foundry/method.md": {
+      "bytes": 15744,
+      "sha256": "7c6d40b14c7faa1336a71042230abd92132501ad1a967eaff728daacf3cc85dd"
+    },
+    "library/foundry/prompts.md": {
+      "bytes": 6220,
+      "sha256": "7fde87d45d87928c8d91dff285a84ff6fe7845bb07977f9926955deb77b53a34"
+    },
+    "library/foundry/references/architecture-decisions.md": {
+      "bytes": 3336,
+      "sha256": "97be82483af2309adec540fe005e0fa1bffceaa72bd3213c73efdd018cba710e"
+    },
+    "library/foundry/references/classification.md": {
+      "bytes": 3720,
+      "sha256": "e7a3a702e8a2f4416dd1ac47850d148cbe3b233f70c07e6287ddbbcc169bd5b0"
+    },
+    "library/foundry/references/discovery-interview.md": {
+      "bytes": 7044,
+      "sha256": "1bcd75f4f557dcdfe8edb80230f2e5eeecc70e6cf91831792e5f119921932ca7"
+    },
+    "library/foundry/references/document-package.md": {
+      "bytes": 13824,
+      "sha256": "800961463cf5d484fddb26d2cc80f0be973dab190e73fcf0192c407d48861832"
+    },
+    "library/foundry/references/example-garden-dry-run.md": {
+      "bytes": 8319,
+      "sha256": "151c8f0cb6d80e0ff8678fa109cc928566f96938405359ca9a32d82444e0ea03"
+    },
+    "library/foundry/references/phase-workflow.md": {
+      "bytes": 18180,
+      "sha256": "b707ea77be4fb3c9ad24563a7591a4c43dc8cecf5f5b627a11f26c04fa84abd2"
+    },
+    "library/foundry/references/release-and-operations.md": {
+      "bytes": 6546,
+      "sha256": "cf270808c29372a76f066fd1a78e4f02441fc8d4a17ee6d37366c7d7d462cbce"
+    },
+    "library/foundry/references/risk-and-red-team.md": {
+      "bytes": 5761,
+      "sha256": "403628b9a626b6980af037ba9169073a8cbfbeace87578cece36d164548eb402"
+    },
+    "library/foundry/references/ux-discovery.md": {
+      "bytes": 3132,
+      "sha256": "216087ab5d205ea3ca33c942bf21ee22ca0e80a4128c3061f56355e7c2195d22"
+    },
+    "library/foundry/templates/create-phase-tags.yml": {
+      "bytes": 3144,
+      "sha256": "20767edec1dcabce94c80193f374e870e7f284d9036c2df98fa91f91f0ba3261"
+    },
+    "library/foundry/templates/foundry-worksheet.md": {
+      "bytes": 2935,
+      "sha256": "4c36016a6563cd2bfb30a33a3190a6f2f3f309bd39c2d3223e2d309561fb9631"
+    },
+    "library/foundry/templates/intake-form.md": {
+      "bytes": 958,
+      "sha256": "ae2705cad172c8ecd8aed8cfe9aa263202df487d63467c076ca108c1bfee7931"
+    },
+    "library/foundry/templates/registries.md": {
+      "bytes": 2510,
+      "sha256": "6d89ebcacb8a486fe485c05ccd920181c241e91e5962634f9cbf4e4a51e44692"
+    },
+    "library/foundry/templates/repo-documents.md": {
+      "bytes": 7156,
+      "sha256": "c9ca60cdc7711183e82c2ac1ff4857e1c7052cc426a6f9e00611b851b78242cb"
+    },
+    "playbooks/1.0.0/core.md": {
+      "bytes": 8352,
+      "sha256": "044d7f72a69e4a629c7dafa4fe23e70c404d75178072fa5376b6160080a3972f"
+    },
+    "playbooks/1.0.0/manifest.json": {
+      "bytes": 1824,
+      "sha256": "cfb40d4d31f1e633d9a7b5a03b59225806183983444145479aceb0e60529aef8"
+    },
+    "playbooks/1.0.0/stages/adopt.md": {
+      "bytes": 4030,
+      "sha256": "0cafbc234f0aa4e9d4a25609d99db90dc78f0adf69418810c9a8376eb4b45c59"
+    },
+    "playbooks/1.0.0/stages/closeout.md": {
+      "bytes": 3675,
+      "sha256": "20e0a91b1e40e3742e9cad87c9470c9ff1d32d19ee9cb8d700c92424d8a1f3b9"
+    },
+    "playbooks/1.0.0/stages/deliver.md": {
+      "bytes": 5365,
+      "sha256": "aec1db33ddc6979e361e7c3caac18a23e188463f37395981ea709f4519c2483f"
+    },
+    "playbooks/1.0.0/stages/evidence.md": {
+      "bytes": 3142,
+      "sha256": "8952fb52c4d24ce1222f2e89251252c77097f70a2ba6e3fda3df232216d4c8bb"
+    },
+    "playbooks/1.0.0/stages/flow-check.md": {
+      "bytes": 1838,
+      "sha256": "94541334be1ddbde543100a008b3d9fba1652e5492fe16ce4d772334acc77e32"
+    },
+    "playbooks/1.0.0/stages/plan.md": {
+      "bytes": 4904,
+      "sha256": "62eb8fcdc9d75fa6472cfcc448525a351590b77809a9db53495a1f760f2b7b63"
+    },
+    "playbooks/1.0.0/stages/resume.md": {
+      "bytes": 1703,
+      "sha256": "ec2e735f85cd0356664059fd64572bb64daa0a306451ad33e46f10dcb0426a8f"
+    },
+    "playbooks/1.0.0/stages/review.md": {
+      "bytes": 3896,
+      "sha256": "99bd81d69ea4006816a5870887067377b4c669254c0b90ac3c5c4b89e3e52ff0"
+    },
+    "playbooks/1.0.0/stages/start.md": {
+      "bytes": 5717,
+      "sha256": "d46a1c2f06d033f4859fe60d8e542118d00174ed4fa0a9135bdd8afc41bfe37b"
+    },
+    "playbooks/1.0.0/stages/steps.md": {
+      "bytes": 2978,
+      "sha256": "fa9234fd729982a35e454ccca3e7595461a168a43c32dbff3c34bf5c8dcbc78d"
+    },
+    "playbooks/1.1.0/core.md": {
+      "bytes": 10032,
+      "sha256": "15bc67581727bd9bb6d1e780194b5ed74635bd084ad43788d91121fe2aa3eca0"
+    },
+    "playbooks/1.1.0/manifest.json": {
+      "bytes": 1824,
+      "sha256": "896db76c15bd1faf3ce44fb6f1dbe4a15c0311efc8175623721201b191d4d9c1"
+    },
+    "playbooks/1.1.0/stages/adopt.md": {
+      "bytes": 4030,
+      "sha256": "0cafbc234f0aa4e9d4a25609d99db90dc78f0adf69418810c9a8376eb4b45c59"
+    },
+    "playbooks/1.1.0/stages/closeout.md": {
+      "bytes": 3675,
+      "sha256": "20e0a91b1e40e3742e9cad87c9470c9ff1d32d19ee9cb8d700c92424d8a1f3b9"
+    },
+    "playbooks/1.1.0/stages/deliver.md": {
+      "bytes": 6848,
+      "sha256": "bfc1fae0f0034ff37165da597444b0e2d296ce94474a22a4851a5ea0a443e62a"
+    },
+    "playbooks/1.1.0/stages/evidence.md": {
+      "bytes": 3142,
+      "sha256": "8952fb52c4d24ce1222f2e89251252c77097f70a2ba6e3fda3df232216d4c8bb"
+    },
+    "playbooks/1.1.0/stages/flow-check.md": {
+      "bytes": 1838,
+      "sha256": "94541334be1ddbde543100a008b3d9fba1652e5492fe16ce4d772334acc77e32"
+    },
+    "playbooks/1.1.0/stages/plan.md": {
+      "bytes": 5362,
+      "sha256": "876d9b309816e3e1fe4bb9607b58e70735de72af3166b99238fb5310ea3d992a"
+    },
+    "playbooks/1.1.0/stages/resume.md": {
+      "bytes": 1703,
+      "sha256": "ec2e735f85cd0356664059fd64572bb64daa0a306451ad33e46f10dcb0426a8f"
+    },
+    "playbooks/1.1.0/stages/review.md": {
+      "bytes": 4629,
+      "sha256": "48932adfe39d9be6e4ea2edf0e91dcd92dcd834a35b89a392980d5432d9fa03c"
+    },
+    "playbooks/1.1.0/stages/start.md": {
+      "bytes": 5717,
+      "sha256": "d46a1c2f06d033f4859fe60d8e542118d00174ed4fa0a9135bdd8afc41bfe37b"
+    },
+    "playbooks/1.1.0/stages/steps.md": {
+      "bytes": 3634,
+      "sha256": "2f91c455a243eac19bd882ade736d212627c3ef726563054926ecc65b93c9c67"
+    },
+    "playbooks/1.2.0/core.md": {
+      "bytes": 10146,
+      "sha256": "993a88b4b4249871b6100ad4280a67d0fd731dcf0122e7df9eb1d2cb1c070ad6"
+    },
+    "playbooks/1.2.0/manifest.json": {
+      "bytes": 1824,
+      "sha256": "022d49db243dc18a07bf275bd48c647d8ebf5927063ecd7a024f7462dd6d81e0"
+    },
+    "playbooks/1.2.0/stages/adopt.md": {
+      "bytes": 4030,
+      "sha256": "0cafbc234f0aa4e9d4a25609d99db90dc78f0adf69418810c9a8376eb4b45c59"
+    },
+    "playbooks/1.2.0/stages/closeout.md": {
+      "bytes": 3675,
+      "sha256": "20e0a91b1e40e3742e9cad87c9470c9ff1d32d19ee9cb8d700c92424d8a1f3b9"
+    },
+    "playbooks/1.2.0/stages/deliver.md": {
+      "bytes": 6848,
+      "sha256": "bfc1fae0f0034ff37165da597444b0e2d296ce94474a22a4851a5ea0a443e62a"
+    },
+    "playbooks/1.2.0/stages/evidence.md": {
+      "bytes": 3142,
+      "sha256": "8952fb52c4d24ce1222f2e89251252c77097f70a2ba6e3fda3df232216d4c8bb"
+    },
+    "playbooks/1.2.0/stages/flow-check.md": {
+      "bytes": 1838,
+      "sha256": "94541334be1ddbde543100a008b3d9fba1652e5492fe16ce4d772334acc77e32"
+    },
+    "playbooks/1.2.0/stages/plan.md": {
+      "bytes": 5362,
+      "sha256": "876d9b309816e3e1fe4bb9607b58e70735de72af3166b99238fb5310ea3d992a"
+    },
+    "playbooks/1.2.0/stages/resume.md": {
+      "bytes": 1703,
+      "sha256": "ec2e735f85cd0356664059fd64572bb64daa0a306451ad33e46f10dcb0426a8f"
+    },
+    "playbooks/1.2.0/stages/review.md": {
+      "bytes": 4629,
+      "sha256": "48932adfe39d9be6e4ea2edf0e91dcd92dcd834a35b89a392980d5432d9fa03c"
+    },
+    "playbooks/1.2.0/stages/start.md": {
+      "bytes": 5717,
+      "sha256": "d46a1c2f06d033f4859fe60d8e542118d00174ed4fa0a9135bdd8afc41bfe37b"
+    },
+    "playbooks/1.2.0/stages/steps.md": {
+      "bytes": 3634,
+      "sha256": "f7c00f9df5ed9cadaf4d04ccf9c9d99731b1b76c8d5241aa7729270e1eb48565"
+    },
+    "playbooks/2.0.0/core.md": {
+      "bytes": 13161,
+      "sha256": "2f894027131390ba0b427ac01e8a922cc488418fb57475b605e785951d171556"
+    },
+    "playbooks/2.0.0/manifest.json": {
+      "bytes": 1824,
+      "sha256": "cd6558a8cfa3ee32f2463854f9a983b48cb82d4410522a59732287d5b2acbbcc"
+    },
+    "playbooks/2.0.0/stages/adopt.md": {
+      "bytes": 4117,
+      "sha256": "160695aa0b512a335f4a539d309ec6f646b7955d4415fee85ebd16f5308e7d54"
+    },
+    "playbooks/2.0.0/stages/closeout.md": {
+      "bytes": 3809,
+      "sha256": "f501a1fe1064b2dd79c311bc85f0bf17f23df5eed2067ac57c72bcb6cd352469"
+    },
+    "playbooks/2.0.0/stages/deliver.md": {
+      "bytes": 7161,
+      "sha256": "45cef0bb585cf07a88fac45c3e38b8231d6f208aac329c50f435d67a50cfea15"
+    },
+    "playbooks/2.0.0/stages/evidence.md": {
+      "bytes": 3142,
+      "sha256": "8952fb52c4d24ce1222f2e89251252c77097f70a2ba6e3fda3df232216d4c8bb"
+    },
+    "playbooks/2.0.0/stages/flow-check.md": {
+      "bytes": 1838,
+      "sha256": "94541334be1ddbde543100a008b3d9fba1652e5492fe16ce4d772334acc77e32"
+    },
+    "playbooks/2.0.0/stages/plan.md": {
+      "bytes": 5750,
+      "sha256": "bc4e1b47d73c863477cd6872303aca3b07acc6e68982c90dc49235c5d9a83879"
+    },
+    "playbooks/2.0.0/stages/resume.md": {
+      "bytes": 1703,
+      "sha256": "ec2e735f85cd0356664059fd64572bb64daa0a306451ad33e46f10dcb0426a8f"
+    },
+    "playbooks/2.0.0/stages/review.md": {
+      "bytes": 4931,
+      "sha256": "93bc4bd6e3427fcf7a45ddaf81d2c18bc23f7f0d173e7ce6183bc3aa44fa19c4"
+    },
+    "playbooks/2.0.0/stages/start.md": {
+      "bytes": 7273,
+      "sha256": "752b4d59057ed335a1a5e0d19896d8b83139d99c519c0595ef1c4afaf5db1357"
+    },
+    "playbooks/2.0.0/stages/steps.md": {
+      "bytes": 3711,
+      "sha256": "54229e9818698bbece82774d895c94f2bcad86942369d44b7e0abc942d577eb9"
+    },
+    "playbooks/2.1.0/core.md": {
+      "bytes": 17262,
+      "sha256": "cd036eff0ac9a9ea6c43fb922a1ebe28c364d1cf64aceee6de2d24e8ba5bcba0"
+    },
+    "playbooks/2.1.0/manifest.json": {
+      "bytes": 1824,
+      "sha256": "6951a8d4b33d0562f76dd775eb7896ff8d7069eaa1aeda6a8cbcf6aeefb76fbd"
+    },
+    "playbooks/2.1.0/stages/adopt.md": {
+      "bytes": 4117,
+      "sha256": "160695aa0b512a335f4a539d309ec6f646b7955d4415fee85ebd16f5308e7d54"
+    },
+    "playbooks/2.1.0/stages/closeout.md": {
+      "bytes": 3809,
+      "sha256": "f501a1fe1064b2dd79c311bc85f0bf17f23df5eed2067ac57c72bcb6cd352469"
+    },
+    "playbooks/2.1.0/stages/deliver.md": {
+      "bytes": 7387,
+      "sha256": "3b3eb4552f63ce0e606053ec1189fcf44a9c3484a0f64faff21b8c19ea9a313e"
+    },
+    "playbooks/2.1.0/stages/evidence.md": {
+      "bytes": 3285,
+      "sha256": "0a96ab851344622ec0f02080aed2b71b5b081e91114d4ddfc61292beb076cb28"
+    },
+    "playbooks/2.1.0/stages/flow-check.md": {
+      "bytes": 1838,
+      "sha256": "94541334be1ddbde543100a008b3d9fba1652e5492fe16ce4d772334acc77e32"
+    },
+    "playbooks/2.1.0/stages/plan.md": {
+      "bytes": 5750,
+      "sha256": "bc4e1b47d73c863477cd6872303aca3b07acc6e68982c90dc49235c5d9a83879"
+    },
+    "playbooks/2.1.0/stages/resume.md": {
+      "bytes": 1703,
+      "sha256": "ec2e735f85cd0356664059fd64572bb64daa0a306451ad33e46f10dcb0426a8f"
+    },
+    "playbooks/2.1.0/stages/review.md": {
+      "bytes": 4915,
+      "sha256": "98e1d4a98f815fb131ef748ebcffd295b5e1f27d383d05939adc3706d942e5a0"
+    },
+    "playbooks/2.1.0/stages/start.md": {
+      "bytes": 7478,
+      "sha256": "bf1f1f7567104ef8b5f11e8f5e4821e95a5c2a52f8e7b7ba91a8045a68de0b9f"
+    },
+    "playbooks/2.1.0/stages/steps.md": {
+      "bytes": 3711,
+      "sha256": "54229e9818698bbece82774d895c94f2bcad86942369d44b7e0abc942d577eb9"
+    },
+    "playbooks/2.2.0/core.md": {
+      "bytes": 17273,
+      "sha256": "ecd31cd6f87b35e5371ebf8277db71c54060177b9bc0aed95ca69a95ff008def"
+    },
+    "playbooks/2.2.0/manifest.json": {
+      "bytes": 1824,
+      "sha256": "4ce4c8984323e7d57239bfdf90df60f4f55aee7bcb303765074df0ac95d9a6c4"
+    },
+    "playbooks/2.2.0/stages/adopt.md": {
+      "bytes": 5337,
+      "sha256": "af77385ba4a0c465fcdefb1f0d9ecda825a642332a9716ea9224248d9076693d"
+    },
+    "playbooks/2.2.0/stages/closeout.md": {
+      "bytes": 4329,
+      "sha256": "8543b670b962cbcc09e3b86ef0c8ee46ad956bae5bf4091ab194329f703ee83e"
+    },
+    "playbooks/2.2.0/stages/deliver.md": {
+      "bytes": 8532,
+      "sha256": "dcdc3d551a36d09a55228f2b06c51a494302897054135abe22dd1c7645365334"
+    },
+    "playbooks/2.2.0/stages/evidence.md": {
+      "bytes": 3815,
+      "sha256": "c842e57c34d8d868cda04045cf36bc888c8c2f2d0e6b7f5c2e4bfdd22e31ed84"
+    },
+    "playbooks/2.2.0/stages/flow-check.md": {
+      "bytes": 1838,
+      "sha256": "94541334be1ddbde543100a008b3d9fba1652e5492fe16ce4d772334acc77e32"
+    },
+    "playbooks/2.2.0/stages/plan.md": {
+      "bytes": 6187,
+      "sha256": "605ac4317fb6ef856c1c8fc02db6ad73856fd718e16328f67bdc15fbab11c7bd"
+    },
+    "playbooks/2.2.0/stages/resume.md": {
+      "bytes": 2281,
+      "sha256": "598217ef1541068ee80c8be2f44a7e53628da02aab4a573fb061b12bb95c5308"
+    },
+    "playbooks/2.2.0/stages/review.md": {
+      "bytes": 5445,
+      "sha256": "759167a89433757e007aa131df80a60fbaca6b3258973e9b8357e91dd8849bc3"
+    },
+    "playbooks/2.2.0/stages/start.md": {
+      "bytes": 7478,
+      "sha256": "bf1f1f7567104ef8b5f11e8f5e4821e95a5c2a52f8e7b7ba91a8045a68de0b9f"
+    },
+    "playbooks/2.2.0/stages/steps.md": {
+      "bytes": 3711,
+      "sha256": "54229e9818698bbece82774d895c94f2bcad86942369d44b7e0abc942d577eb9"
+    },
+    "playbooks/legacy-personal-workflows/manifest.json": {
+      "bytes": 2109,
+      "sha256": "7a285cb257317a1c1efbe00113c6b20754dd17868d5dfbf79461e0675a5d86fa"
+    },
+    "playbooks/legacy-personal-workflows/skills/work-closeout/SKILL.md": {
+      "bytes": 2029,
+      "sha256": "7765a7705815e5fa3269feb9c3ddc33a8efccf7b71473ebdf67cbf48e05609fd"
+    },
+    "playbooks/legacy-personal-workflows/skills/work-closeout/agents/openai.yaml": {
+      "bytes": 276,
+      "sha256": "202c57961f33cc0bb2b25497063ff45e44654f9d3e454717e6be21baaaec63af"
+    },
+    "playbooks/legacy-personal-workflows/skills/work-evidence/SKILL.md": {
+      "bytes": 2558,
+      "sha256": "ae820c9e652161e8e2b9e8cbc05eec71d5a19d2d86bbfeb8df713321274e4c27"
+    },
+    "playbooks/legacy-personal-workflows/skills/work-evidence/agents/openai.yaml": {
+      "bytes": 287,
+      "sha256": "1c03da121c96cf1465066b5bf4ae2581ccb7206b414ae817d2c11c4495fc8c0f"
+    },
+    "playbooks/legacy-personal-workflows/skills/work-flow-check/SKILL.md": {
+      "bytes": 2078,
+      "sha256": "71d1b27894f9a03041861c14161bc36bbc156f7feac4192beaa7addab1aa7e40"
+    },
+    "playbooks/legacy-personal-workflows/skills/work-flow-check/agents/openai.yaml": {
+      "bytes": 274,
+      "sha256": "8a47de2c957ab5ddf11e8d3e9380eeada9a847a9dec214ea00a51f20fa36b30c"
+    },
+    "playbooks/legacy-personal-workflows/skills/work-plan/SKILL.md": {
+      "bytes": 2756,
+      "sha256": "d3ac06c489c6fcac80c82e6815df942ade9af4e4a67e28abc9d617abd0519434"
+    },
+    "playbooks/legacy-personal-workflows/skills/work-plan/agents/openai.yaml": {
+      "bytes": 268,
+      "sha256": "a9184dfb558fc7eb9ef01898a67f272f68eaa6d1833c492ac709c924bac9a568"
+    },
+    "playbooks/legacy-personal-workflows/skills/work-resume/SKILL.md": {
+      "bytes": 1920,
+      "sha256": "6d5389f7165ecede80b2a11d1ddf89609f55d190eaf31e199c1c59f48b01b799"
+    },
+    "playbooks/legacy-personal-workflows/skills/work-resume/agents/openai.yaml": {
+      "bytes": 263,
+      "sha256": "2d4c5e9162ed0f1b1be8659013af8467fb57bb222b517a0dde326658b6f4c7b2"
+    },
+    "playbooks/legacy-personal-workflows/skills/work-review/SKILL.md": {
+      "bytes": 2332,
+      "sha256": "655510fb3ef8644bf7370ba92ad5678e6ee870a3ceaf3422e3d7264f7ec0a834"
+    },
+    "playbooks/legacy-personal-workflows/skills/work-review/agents/openai.yaml": {
+      "bytes": 268,
+      "sha256": "d7e45eae98e4e29979b8220a023d0ceea38e4ef72cf8e20b05d0940326769f22"
+    },
+    "playbooks/legacy-personal-workflows/skills/work-steps/SKILL.md": {
+      "bytes": 5340,
+      "sha256": "7486ec3bc1ab79de1c13ee60371de833c9d42474094839cdcd4c556a425ba871"
+    },
+    "playbooks/legacy-personal-workflows/skills/work-steps/agents/openai.yaml": {
+      "bytes": 275,
+      "sha256": "d6b02db81b457e0823cb2d7dde29411d60fa557085189e3ee658fc0e7e4e82f6"
+    },
+    "playbooks/manifest.json": {
+      "bytes": 914,
+      "sha256": "bcb383d75e8a6428ca2745ea138092d980e0dc2d1356f444bceb1d13e23f8e4e"
+    },
+    "provenance/CONVERSION-NOTES.md": {
+      "bytes": 7241,
+      "sha256": "88fe0d170e3d64f1a9fe3a375f2a2989a99742e879b700aaa7a474603f4cf24f"
+    },
+    "provenance/ECC-LICENSE.txt": {
+      "bytes": 1071,
+      "sha256": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2"
+    },
+    "provenance/README.md": {
+      "bytes": 1029,
+      "sha256": "7b5565fba223bf445979f3b35914032ee7f0f816ad2d9281e0abc14f872dc308"
+    },
+    "provenance/codex-parity-1.3.0.md": {
+      "bytes": 4708,
+      "sha256": "2a080ccb68175f71b14bb4e8371393732d5414a78c7f4a1e624f5a33454f85b7"
+    },
+    "provenance/consolidation-map.md": {
+      "bytes": 12577,
+      "sha256": "f795d7bce17abebbd43a10b64860d545a133b0c2533e6d7a4df1b0518e0ee9ce"
+    },
+    "provenance/process-1.1-amendment.md": {
+      "bytes": 3176,
+      "sha256": "1f41f1f54095af4ef2df56982462aed1b267e8639f4ede3687a9930e18c4f79c"
+    },
+    "provenance/process-1.2-claude-port.md": {
+      "bytes": 2764,
+      "sha256": "9c23b5be2e784feec38486b4cac85aaaeb3ded7217ad51542c450f46d69b5e7d"
+    },
+    "provenance/process-2.0.0.md": {
+      "bytes": 2714,
+      "sha256": "5270fa3d3bb07dd4df84e793caf2ca7b9cb35f06918161c894e365691fe8c95e"
+    },
+    "provenance/process-2.1.0.md": {
+      "bytes": 4208,
+      "sha256": "6acce8ab6348033d8995c8cd1c7eb83497ec8d559684397c6563d8a8682467ba"
+    },
+    "provenance/process-2.2.0.md": {
+      "bytes": 4030,
+      "sha256": "e116e1d1c93f6eface04ed47e82954716f22ee2279586cc132ce710489d29b69"
+    },
+    "scripts/build_exports.py": {
+      "bytes": 6972,
+      "sha256": "ba3a7944be6ecb02ba6595600822758a57e3ff79fe10f5cfbdb2c6f9fbdca5f4"
+    },
+    "scripts/build_manifests.py": {
+      "bytes": 8360,
+      "sha256": "0b46c8c864164a97c8769b8387aa854416336b318b8a65c42cd47eb326b4b579"
+    },
+    "scripts/check_package.py": {
+      "bytes": 8975,
+      "sha256": "3d02e5af4c14f58ba1b8432f9980c390db0d40fb74a65b17c98d8a6f4c454145"
+    },
+    "scripts/check_release.py": {
+      "bytes": 4309,
+      "sha256": "a25c31171cf4258ffa112a2bfe070766c4f2fcc8a8707edf3d606e05c2a0df79"
+    },
+    "scripts/package_inventory.py": {
+      "bytes": 4061,
+      "sha256": "19972e50e9404a49b9b38949a5a93288ab80158ef2386d5908e364821384386b"
+    },
+    "scripts/prepare_behavior.py": {
+      "bytes": 5528,
+      "sha256": "113896992ebbcb5e8a16b3ba8b17c27b027c364355fbaba784130bccb9dc85aa"
+    },
+    "scripts/resolve_workflow.py": {
+      "bytes": 14653,
+      "sha256": "e9d4e060e986c3a7690a8129d4fd6491c70f2117f28bb34a9d52698643b9cad2"
+    },
+    "skills/paradox-mode/SKILL.md": {
+      "bytes": 1686,
+      "sha256": "ad17c88c9a3319ad33cba86d2aaf7d92eaa55d95258137a9371bc695546bc419"
+    },
+    "skills/paradox-mode/agents/openai.yaml": {
+      "bytes": 131,
+      "sha256": "15351a609baaf519d6925776e4fbd90e8ea9f59385604c673d6aa741d9cf3907"
+    },
+    "skills/paradox-setup/SKILL.md": {
+      "bytes": 3519,
+      "sha256": "09fe7ad212cf641017ba53d672500c69df7cf7dd217cb743558474ab3d111405"
+    },
+    "skills/paradox-setup/agents/openai.yaml": {
+      "bytes": 144,
+      "sha256": "5824c16100050cc9e70831b0f505c6f300f422496280e4db03dabca16d966930"
+    },
+    "skills/work-adopt/SKILL.md": {
+      "bytes": 2220,
+      "sha256": "9f7293adb5a7da7a679d2cb022cc879cb5326e1464cfe680e5aee755d6126984"
+    },
+    "skills/work-adopt/agents/openai.yaml": {
+      "bytes": 194,
+      "sha256": "cc3586362ff1169a298b0cb4687737368da724d4d25249dfa4ff8a0cb560c908"
+    },
+    "skills/work-closeout/SKILL.md": {
+      "bytes": 1698,
+      "sha256": "68cffd8c437d448bd3dc5ebd174c7b266ec48caf5414293389a48b525baa387c"
+    },
+    "skills/work-closeout/agents/openai.yaml": {
+      "bytes": 191,
+      "sha256": "c3adaf85bb46ec4078fd213bdf9a5227ee49e9e934aabf73412caad1aba6dfaa"
+    },
+    "skills/work-deliver/SKILL.md": {
+      "bytes": 1613,
+      "sha256": "70be8cdd8d923a8d7eeba3cd73f6fe19ea80f20fd324780c91ae3f263015fc78"
+    },
+    "skills/work-deliver/agents/openai.yaml": {
+      "bytes": 192,
+      "sha256": "be0997b7d52b19c46e59f3f99403e17971998ceed30012264c3a0a7c5f417a5a"
+    },
+    "skills/work-evidence/SKILL.md": {
+      "bytes": 1568,
+      "sha256": "fad9171e6194017539b4cea81321a19524707422bd6e3b3d1c4d5f7ed9e30bf9"
+    },
+    "skills/work-evidence/agents/openai.yaml": {
+      "bytes": 193,
+      "sha256": "7689da367ee77d1b49cc7c489bed50b7b83c38380a35ce6e4b88ca56b630166b"
+    },
+    "skills/work-flow-check/SKILL.md": {
+      "bytes": 1580,
+      "sha256": "0ffbd9aca4a0c7f742052e7b6b8f315e3f4de6c822e0e707ce8a800b47c22db0"
+    },
+    "skills/work-flow-check/agents/openai.yaml": {
+      "bytes": 191,
+      "sha256": "38ba34e32fd889936a48984721194af6f00858417b6cd2f9eb023c0ff4842aa3"
+    },
+    "skills/work-plan/SKILL.md": {
+      "bytes": 1578,
+      "sha256": "c3811183f4783a07073020af180521bb91a814cc7711c78add4105eeba3879b1"
+    },
+    "skills/work-plan/agents/openai.yaml": {
+      "bytes": 190,
+      "sha256": "98dbd50ee717fd2e995cd2220e2585499417d41b8ee82303764bcf77f2d780eb"
+    },
+    "skills/work-resume/SKILL.md": {
+      "bytes": 1599,
+      "sha256": "bc8f9a36ee3b68d8718cb0e5bd9391b607fa4c79b2ac1c071f356fd872efe812"
+    },
+    "skills/work-resume/agents/openai.yaml": {
+      "bytes": 189,
+      "sha256": "14c4f1a72deb37a8a83248fe916c7c7d14d10ada00a6cde3e52a0961bf7e7e6f"
+    },
+    "skills/work-review/SKILL.md": {
+      "bytes": 1597,
+      "sha256": "56be06379d16916af716f9ed8b36ac97106434b88ce18477eb6b4d27d903b5bb"
+    },
+    "skills/work-review/agents/openai.yaml": {
+      "bytes": 182,
+      "sha256": "5578022a5ec7c33a1b5ca1d4d1538254e404f09aea4d675548f2f5e0954ed8aa"
+    },
+    "skills/work-start/SKILL.md": {
+      "bytes": 2212,
+      "sha256": "1b22ad714370932d57aa831200be738673081bb19d6e3d93db9e2d9467afefdd"
+    },
+    "skills/work-start/agents/openai.yaml": {
+      "bytes": 155,
+      "sha256": "2c129311d7942600088d2fd3178ee057be5bac456bf9bdbccbe171587df069b3"
+    },
+    "skills/work-steps/SKILL.md": {
+      "bytes": 1722,
+      "sha256": "b5342c699abd19209513c452af4c1e44e4862b735e8a8e3e43d33d188a7a7b14"
+    },
+    "skills/work-steps/agents/openai.yaml": {
+      "bytes": 198,
+      "sha256": "ce97f319eb4d2edadf3bce355d98717628ac8e3c1e8085c149e4dcde89af3a20"
+    },
+    "templates/README.md": {
+      "bytes": 2194,
+      "sha256": "ab4fd03a381d64d9aa0da5319a347b99ca6592a14fe8504fe777380fe2365a11"
+    },
+    "templates/codex/AGENTS-global-snippet.md": {
+      "bytes": 2252,
+      "sha256": "2e9c43c71fbe9a3bea1f327cd998de747a95728e166334ed694f904da3c68f72"
+    },
+    "templates/codex/agents/work-explorer.toml": {
+      "bytes": 1771,
+      "sha256": "e6ed59aeb76bc7c38e4da85c86fffd3b04eb60831c6c052db9de9b828c74b345"
+    },
+    "templates/codex/agents/work-independent-reviewer.toml": {
+      "bytes": 2400,
+      "sha256": "427975ab3fa580599aca553c3a1cdff674d265e9c640a5dee263942dc2cc3ba3"
+    },
+    "templates/codex/agents/work-researcher.toml": {
+      "bytes": 1811,
+      "sha256": "a1e614a45701e07c7983140c145eb82f79e439b80541ef79b91721d499187fa2"
+    },
+    "templates/codex/agents/work-verifier.toml": {
+      "bytes": 2377,
+      "sha256": "b1b95f7ffe4585c988d7da5fc91a26b01399cec6ecbff9b7c0cf7f415686be8c"
+    },
+    "templates/project/.github/pull_request_template.md": {
+      "bytes": 3706,
+      "sha256": "280df20ab417f6e0b531f2f79cac7fbe4744816b6dd5967f5ec885af7a3e02c3"
+    },
+    "templates/project/.github/scripts/select-ci.mjs": {
+      "bytes": 3004,
+      "sha256": "85f92496a7941b54a1f20d06c58ebf9623d671a16329b9f56206a9e2a7b59c84"
+    },
+    "templates/project/.github/scripts/select-ci.test.mjs": {
+      "bytes": 2164,
+      "sha256": "3d4fdafb1ea441c01a675efd04de4d23406d0c4e0e19870ace9028262746755b"
+    },
+    "templates/project/.github/workflows/ci.yml": {
+      "bytes": 1583,
+      "sha256": "904449f35b77d26b68838b9987abca6f31ba92ebbec237f188413d82f5218fb3"
+    },
+    "templates/project/.github/workflows/create-phase-tags.yml": {
+      "bytes": 3144,
+      "sha256": "20767edec1dcabce94c80193f374e870e7f284d9036c2df98fa91f91f0ba3261"
+    },
+    "templates/project/CLAUDE.md": {
+      "bytes": 3737,
+      "sha256": "e791c7013e955564840b1591c3be31e01900a1865ff0b80b9f39b249ef0ed583"
+    },
+    "templates/project/README-contract.md": {
+      "bytes": 472,
+      "sha256": "eacea374965f605120d56436e8a627f606dee077c72d7490801eb42396dcde4d"
+    },
+    "templates/project/docs/OPERATING.md": {
+      "bytes": 6150,
+      "sha256": "d985d22e03dcc428a40800e6d25b4f50e2f4add6c951fa2c5bf90462cec88299"
+    },
+    "templates/project/docs/PHASE_HISTORY.md": {
+      "bytes": 700,
+      "sha256": "1777fdb796e221d97b6b8f2df05225fb4fe00eb924008bbdb4c4238a940ba8a1"
+    },
+    "templates/project/docs/PROJECT_STATE.md": {
+      "bytes": 1415,
+      "sha256": "63347d29c774f7ecbfd8525e8a40cc99db5eaea2333c18cfaef9ec631d9dba2e"
+    },
+    "templates/project/docs/evidence/packet.md": {
+      "bytes": 2136,
+      "sha256": "55c5f2e28f144fac793a6c3d713c3655374ed7ac4e0d5c38ab1f7e754672a0c5"
+    },
+    "templates/project/docs/plans/cards.md": {
+      "bytes": 1624,
+      "sha256": "2041aa66d927ed541dede868cd28fbf384bb65b14b9bad6a761bad623e673569"
+    },
+    "templates/project/docs/plans/register.md": {
+      "bytes": 1400,
+      "sha256": "55eabd70914a09ef66cdb081bad94f0d2397d5eaa5d796e54bc233a4b5a3629f"
+    },
+    "templates/project/docs/tools/TOOL-PROCEDURE.md": {
+      "bytes": 2003,
+      "sha256": "a6a5ae361f0607e4f0eb5c2d399240d25a50240ffa6710c1a4a2dde96e451c8f"
+    },
+    "tests/behavior/README.md": {
+      "bytes": 3688,
+      "sha256": "fac1fe712ea79f0efe866ebe16f8122bc919c4f83e9c0e58d03cb8e96ad8fc07"
+    },
+    "tests/behavior/scenarios.json": {
+      "bytes": 6410,
+      "sha256": "a7d5ce426abd30f91ca65e28271798c5823d4db5e0713173ebe736c9f699deba"
+    },
+    "tests/test_behavior_prepare.py": {
+      "bytes": 2106,
+      "sha256": "a26b7c8a9ed6c339eb1ef913e0a364c4803261648821db9659ffe3bd0b43da86"
+    },
+    "tests/test_codex_agents.py": {
+      "bytes": 2216,
+      "sha256": "8a858b22ab33911c62fa6009ab89b0d0becf76bed0c4ff37974f430ed6dc7e66"
+    },
+    "tests/test_exports.py": {
+      "bytes": 3258,
+      "sha256": "f1768a73f63dfd4c546cc9e4eef50372be79c7985e910621c2e6a9a740728e3f"
+    },
+    "tests/test_release.py": {
+      "bytes": 7527,
+      "sha256": "73985fe193e74ebdb462714c0259b86a1d298c4500968dc5995b7b5abb3f1b9d"
+    },
+    "tests/test_resolver.py": {
+      "bytes": 21594,
+      "sha256": "0c231da2f1df47c73276111ac843fdb9a59d5b574173e502c8bfecf9972ff0da"
+    }
+  },
+  "package_version": "1.4.0",
+  "plugin": "pantomimes-paradox",
+  "schema": 1
+}
