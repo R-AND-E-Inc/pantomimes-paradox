@@ -17,8 +17,9 @@ and load the specified skill/payload. The supplied evidence records are syntheti
 not test results from a live product. Test fixtures are isolated Git repositories and must never
 use project/provider credentials or live data.
 
-The four cases cover planning-only authority and retrieved instructions; authorized implementation,
-reuse and regression sensitivity; evidence calibration and reuse; stale plan/candidate continuation.
+The six cases cover planning-only authority and retrieved instructions; authorized implementation,
+reuse and regression sensitivity; evidence calibration and reuse; stale plan/candidate continuation;
+a diagnostic discriminator; and a shared-interface handoff with incompatible producer/consumer assumptions.
 The fifth family, real client activation, is observed after installation using the receipt described
 in `docs/activation.md`. Explicitly loading source text is not native plugin discovery proof.
 

@@ -766,12 +766,12 @@
       "sha256": "a6a5ae361f0607e4f0eb5c2d399240d25a50240ffa6710c1a4a2dde96e451c8f"
     },
     "tests/behavior/README.md": {
-      "bytes": 3688,
-      "sha256": "fac1fe712ea79f0efe866ebe16f8122bc919c4f83e9c0e58d03cb8e96ad8fc07"
+      "bytes": 3795,
+      "sha256": "9a5b22ec2a84fe6d504dd8b39eda050f5c3519aaa57f045712c4892b88fa487b"
     },
     "tests/behavior/scenarios.json": {
-      "bytes": 6410,
-      "sha256": "a7d5ce426abd30f91ca65e28271798c5823d4db5e0713173ebe736c9f699deba"
+      "bytes": 12186,
+      "sha256": "aeddcb533a44b91b648f63fb93b80257e522ffd332ad44702d68396dc95034d3"
     },
     "tests/test_behavior_prepare.py": {
       "bytes": 2106,
